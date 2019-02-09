@@ -136,8 +136,8 @@ O código associado aos exercícios é disponibilizado através da licença [GPL
 ## Metadados
 
 * Autor: [Nuno Fachada]
-* [Colaboradores](graphs/contributors)
-* Curso: [Licenciatura em Videojogos][lamv]
+* [Colaboradores](https://github.com/VideojogosLusofona/lp1_exercicios/graphs/contributors)
+* Curso: [Licenciatura em Videojogos][lv]
 * Instituição: [Universidade Lusófona de Humanidades e Tecnologias][ULHT]
 
 [GPLv3]:https://www.gnu.org/licenses/gpl-3.0.en.html
@@ -145,4 +145,3 @@ O código associado aos exercícios é disponibilizado através da licença [GPL
 [lv]:https://www.ulusofona.pt/licenciatura/videojogos
 [Nuno Fachada]:https://github.com/fakenmc
 [ULHT]:https://www.ulusofona.pt/
-[lamv]:https://www.ulusofona.pt/licenciatura/videojogos
