@@ -24,13 +24,13 @@ secção [Colaboração](#colab).
 
 ## Conteúdos
 
-_Em breve_
-
-<!--1. [Git](problemas/01_git.md)
+1. [Git](problemas/01_git.md)
 2. [Bases de C#](problemas/02_bases_cs.md)
-3. [Programação Orientada a Objectos](problemas/03_poo.md)
-4. [UML e design de classes](problemas/04_uml.md)
-5. [Tópicos avançados de C#](problemas/05_avancado.md)-->
+
+<!--
+1. [Programação Orientada a Objectos](problemas/03_poo.md)
+2. [UML e design de classes](problemas/04_uml.md)
+3. [Tópicos avançados de C#](problemas/05_avancado.md)-->
 
 <a name="colab" />
 
@@ -54,10 +54,8 @@ contém uma série de ficheiros Markdown com as soluções dos exercícios de
 determinada parte da matéria. Cada ficheiro corresponde a uma ou mais soluções
 de apenas um dos exercícios. Se o aluno apresentar uma nova solução, pode
 opcionalmente assinar a autoria da mesma através de um _link_ à sua página do
-GitHub.
-
-Em qualquer dos casos, o aluno pode também adicionar o seu nome/_link_ a
-página do GitHub na secção Colaboradores desta página, mais abaixo.
+GitHub. As soluções devem estar completas, bem formatadas e devem seguir
+[este modelo](solucoes/02_bases_cs/01.md).
 
 São ainda aceites _pull requests_ com correções a esta página, às licenças, e
 por ai fora.
