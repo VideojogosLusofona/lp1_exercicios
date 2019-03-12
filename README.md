@@ -90,19 +90,19 @@ A cópia do repositório na tua conta é geralmente chamada _origin_.
 ### Efetuar alterações e solicitar integração
 
 1. Dentro da pasta dos exercícios, chamada *lp1_exercicios*, cria um ramo
-   (_branch_) para inserires as tuas novas propostas:
+   (_branch_) para inserires a tua nova proposta (deve ser criado um novo ramo
+   por cada nova solução ou proposta de exercício):
    * `$ git branch meu_ramo`
    * `$ git checkout meu_ramo`
    * O nome `meu_ramo` pode ser substituído por qualquer outro nome.
    * O primeiro comando cria o ramo, o segundo comando muda o git para esse
      ramo. Os dois comandos podem ser compactados num só:
      `$ git checkout -b meu_ramo`.
-2. Uma vez no novo ramo, faz as alterações/propostas às soluções e/ou aos
-   exercícios. Cada alteração/proposta deve ser especificada com pelo menos um
-   _commit_:
+2. Uma vez no novo ramo, faz as alterações à proposta ou solução. Cada
+   alteração relevante deve ser especificada com pelo menos um _commit_:
    * `$ git add nome_dos_ficheiros_alterados`
    * `$ git commit -m "Descrição das alterações efetuadas"`
-3. O `novo_ramo` deve ser carregado (_pushed_) para o repositório _origin_ (ou
+3. O `meu_ramo` deve ser carregado (_pushed_) para o repositório _origin_ (ou
    seja, para o *fork* que criaste no GitHub):
    * `$ git push -u origin meu_ramo`
    * A opção `-u` é necessária pois nesta fase o teu repositório no GitHub
