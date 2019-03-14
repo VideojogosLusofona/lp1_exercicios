@@ -389,7 +389,7 @@ separadas pelos caracteres passados ao método sob a forma de _array_ de
 
 ```cs
 string s = "A string with several words";
-char[] separators = new Char [] { ' ', ',', '.', ':', '\t' };
+char[] separators = new char[] { ' ', ',', '.', ':', '\t' };
 string[] arrayOfStrings = s.Split(separators);
 ```
 
