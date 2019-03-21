@@ -508,7 +508,7 @@ foreach (string s in frases)
     }
 }
 
-            Console.WriteLine(n);
+Console.WriteLine(n);
 ```
 
 > [Soluções](../solucoes/02_bases_cs/34.md)
