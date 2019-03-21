@@ -514,3 +514,11 @@ foreach (string s in frases)
 > [Soluções](../solucoes/02_bases_cs/34.md)
 
 ---
+
+35 - Escreve um programa em C# que solicite ao utilizador dois números inteiros
+sem sinal, e apresente, em hexadecimal, o resultado da operação AND bit a bit
+do primeiro pela negação bit a bit do segundo.
+
+> [Soluções](../solucoes/02_bases_cs/35.md)
+
+---
