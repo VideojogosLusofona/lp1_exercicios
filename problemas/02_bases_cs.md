@@ -449,3 +449,76 @@ http://matrix.reshish.com/multiplication.php.
 > [Soluções](../solucoes/02_bases_cs/31.md)
 
 ---
+
+32 - Indica o que é mostrado no ecrã pelo seguinte código C#. Justifica a tua
+resposta.
+
+```cs
+byte b = byte.MaxValue - 1;
+
+for (int i = 0; i < 5; i++)
+{
+    Console.WriteLine($"Iteração {i}: {(byte) (++b - 1)}");
+}
+```
+
+> [Soluções](../solucoes/02_bases_cs/32.md)
+
+---
+
+33 - Indica o que é mostrado no ecrã pelo seguinte código C#. Justifica a tua
+resposta.
+
+```cs
+int[] someInts = { 11, 8, 6, 3, 9, 104 };
+
+foreach (int v in someInts)
+{
+    if (v % 2 == 0)
+    {
+        Console.WriteLine("{0,3}", v);
+    }
+}
+```
+
+> [Soluções](../solucoes/02_bases_cs/33.md)
+
+---
+
+34 - Indica o que é mostrado no ecrã pelo seguinte código C#. Justifica a tua
+resposta.
+
+```cs
+int n = 0;
+
+string[] frases = {
+    "Curta",
+    "Uma frase longa",
+    "Small",
+    "Very large sentence",
+    "Petit",
+    "How many words do I have?"
+};
+
+foreach (string s in frases)
+{
+    if (s.Length > 6)
+    {
+        n++;
+    }
+}
+
+Console.WriteLine(n);
+```
+
+> [Soluções](../solucoes/02_bases_cs/34.md)
+
+---
+
+35 - Escreve um programa em C# que solicite ao utilizador dois números inteiros
+sem sinal, e apresente, em hexadecimal, o resultado da operação AND bit a bit
+do primeiro pela negação bit a bit do segundo.
+
+> [Soluções](../solucoes/02_bases_cs/35.md)
+
+---
