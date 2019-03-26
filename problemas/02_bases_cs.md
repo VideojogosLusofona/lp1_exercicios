@@ -540,7 +540,7 @@ classes existentes neste jogo, e as respetivas descrições, são:
 
 _Referência:_ https://www.giantbomb.com/classes/3015-405/
 
-_Nota 1:_ Usar `switch` para selecionar a descrição a mostrar.
+_Nota:_ Usar `switch` para selecionar a descrição a mostrar.
 
 > [Soluções](../solucoes/02_bases_cs/36.md)
 
