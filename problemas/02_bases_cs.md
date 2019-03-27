@@ -615,7 +615,7 @@ static void Main(string[] args)
 
 Implementa, dentro da classe `Program`, os métodos `CreateNumbersToN()`,
 `Reverse()` e `PrintNumbers()` de modo a que façam o que está indicado nos
-respetivos comentários do método `Main()`.
+respetivos comentários no método `Main()`.
 
 > [Soluções](../solucoes/02_bases_cs/38.md)
 
@@ -752,5 +752,37 @@ da classe [Math](https://docs.microsoft.com/dotnet/api/system.math)
 devolve o valor absoluto (módulo) do valor passado como argumento.
 
 > [Soluções](../solucoes/02_bases_cs/44.md)
+
+---
+
+45 - Temos um triângulo feito de blocos. A primeira linha do triângulo tem 1
+bloco, a segunda linha tem 2 blocos, a terceira linha tem 3 blocos, e por ai
+fora. Completa o método `Triang`, que, dado o número de linhas, determina
+recursivamente (sem ciclos ou multiplicações) o número total de blocos num
+triângulo deste tipo. Por exemplo, ao receber o valor 4, o método retorna o
+valor 10 correspondente ao número de blocos, como indicado em baixo:
+
+* `*   ` - 1 bloco
+* `**  ` - 2 blocos
+* `*** ` - 3 blocos
+* `****` - 4 blocos
+
+Método devolve 10, pois existem 10 blocos (asteriscos) ao todo.
+
+De modo a testares o método, cria posteriormente um programa que solicite um
+número inteiro ao utilizador, invoque o método `Triang` e imprima no ecrã o
+número devolvido.
+
+```cs
+static int Triang(int linhas)
+{
+    // Completar este método
+}
+```
+
+*Sugerido por [João Duarte](https://github.com/JoaoAlexandreDuarte), adaptado
+de <http://codingbat.com/prob/p194781>.*
+
+> [Soluções](../solucoes/02_bases_cs/45.md)
 
 ---
