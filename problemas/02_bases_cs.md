@@ -786,3 +786,27 @@ de <http://codingbat.com/prob/p194781>.*
 > [Soluções](../solucoes/02_bases_cs/45.md)
 
 ---
+
+46 - Indica o que é impresso no ecrã pelo seguinte código. Justifica a tua
+resposta.
+
+```cs
+static void Main(string[] args)
+{
+    Console.WriteLine(MetodoRecursivo(5));
+}
+
+static int MetodoRecursivo(int n)
+{
+    if (n == 0)
+        return 0;
+    else if (n % 2 == 0)
+        return 3 + MetodoRecursivo(n - 1);
+    else
+        return 2 + MetodoRecursivo(n - 1);
+}
+```
+
+> [Soluções](../solucoes/02_bases_cs/46.md)
+
+---
