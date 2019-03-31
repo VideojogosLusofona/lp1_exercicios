@@ -254,7 +254,7 @@ resultado e terminar a execução. Se não forem indicados três argumentos, ou 
 a operação não for conhecida, o programa deve terminar com uma mensagem de erro
 apropriada.
 
-Exemplo de execução: `./Calc.exe + 3.2 5`, que deverá mostrar `8.2`.
+Exemplo de execução: `dotnet run + 3.2 5`, que deverá mostrar `8.2`.
 
 > [Soluções](../solucoes/02_bases_cs/23.md)
 
@@ -540,7 +540,7 @@ classes existentes neste jogo, e as respetivas descrições, são:
 
 _Referência:_ https://www.giantbomb.com/classes/3015-405/
 
-_Nota 1:_ Usar `switch` para selecionar a descrição a mostrar.
+_Nota:_ Usar `switch` para selecionar a descrição a mostrar.
 
 > [Soluções](../solucoes/02_bases_cs/36.md)
 
@@ -586,5 +586,227 @@ double probability = rng.NextDouble();
 ```
 
 > [Soluções](../solucoes/02_bases_cs/37.md)
+
+---
+
+38 - Considera o seguinte método `Main()`:
+
+```cs
+static void Main(string[] args)
+{
+    // Declaração de variáveis
+    int n;
+    int[] numbers;
+
+    // Pedir ao utilizador o tamanho do array de inteiros
+    Console.Write("Qual o tamanho do array?");
+    n = Convert.ToInt32(Console.ReadLine());
+
+    // Gerar números de 1 até n
+    numbers = CreateNumbersToN(n);
+
+    // Inverter os conteúdos do array
+    Reverse(numbers);
+
+    // Imprimir os conteúdos do array
+    PrintNumbers(numbers);
+}
+```
+
+Implementa, dentro da classe `Program`, os métodos `CreateNumbersToN()`,
+`Reverse()` e `PrintNumbers()` de modo a que façam o que está indicado nos
+respetivos comentários no método `Main()`.
+
+> [Soluções](../solucoes/02_bases_cs/38.md)
+
+---
+
+39 - Considera a seguinte declaração do método
+[Next](https://docs.microsoft.com/dotnet/api/system.random.next#System_Random_Next_System_Int32_System_Int32_)
+(classe [Random](https://docs.microsoft.com/dotnet/api/system.random),
+_namespace_ [System](https://docs.microsoft.com/dotnet/api/system)):
+
+```cs
+public virtual int Next(int minValue, int maxValue);
+```
+
+Indica:
+
+1. O nome do método.
+2. O tipo devolvido pelo método.
+3. Os argumentos aceites pelo método.
+4. A assinatura do método.
+5. Outras características indicadas na declaração.
+6. Se existe algum _overloading_ deste método na classe
+[Random](https://docs.microsoft.com/dotnet/api/system.random), e em caso
+afirmativo, mostrar as respetivas declarações.
+
+> [Soluções](../solucoes/02_bases_cs/39.md)
+
+---
+
+40 - Escreve documentação em formato XML para o método `RockPaperScissors`
+apresentado em baixo, seguindo as melhores práticas para o efeito. Os valores
+`ROCK`, `PAPER` e `SCISSORS` devem ser considerados como constantes inteiras.
+
+```cs
+static int RockPaperScissors(int player1, int player2)
+{
+    if (player1 == player2)
+    {
+        return 0; // Draw
+    }
+    if (((player1 == ROCK) && (player2 == SCISSORS)) ||
+        ((player1 == SCISSORS) && (player2 == PAPER)) ||
+        ((player1 == PAPER) && (player2 == ROCK)))
+    {
+        return 1; // Player 1 wins
+    }
+    else
+    {
+        return 2; // Player 2 wins
+    }
+}
+```
+
+> [Soluções](../solucoes/02_bases_cs/40.md)
+
+---
+
+41 - 1) Reescreve o método `RockPaperScissors` de modo a que siga as melhores
+práticas de legibilidade de código, nomeadamente que tenha apenas um único
+`return` no fim. 2) Escreve um método `Main` para testar o método
+`RockPaperScissors`, nomeadamente pedindo ao jogador um para selecionar uma
+opção (`ROCK`, `PAPER` ou `SCISSORS`), ao jogador dois para fazer o mesmo, e
+apresentando depois o resultado do jogo. 3) Integra os métodos `Main` e
+`RockPaperScissors` numa classe chamada `RPSGame`, _namespace_ `LP1Exercises`.
+
+> [Soluções](../solucoes/02_bases_cs/41.md)
+
+---
+
+42 - Melhora a legibilidade do código do exercício anterior criando duas
+enumerações, uma para indicar o resultado do jogo, outra para definir as
+possíveis jogadas. Mostra o código completo das enumerações criadas e da classe
+`RPSGame`, todas dentro do _namespace_ `LP1Exercises`.
+
+> [Soluções](../solucoes/02_bases_cs/42.md)
+
+---
+
+43 - Considera as seguintes enumerações:
+
+```cs
+enum Terrain
+{
+    Rock = 0,
+    Plains,
+    Forest,
+    Jungle
+}
+enum BonusTerrain
+{
+    Water = 1,
+    Food
+}
+```
+
+Escreve dois métodos _overloaded_ chamados `Eat()`, um que aceite um `Terrain`
+e devolva o valor numérico do respetivo membro da enumeração `Terrain`, e outro
+que aceite um `BonusTerrain` e devolva o valor numérico do respetivo membro da
+enumeração `BonusTerrain` multiplicado por 10. Coloca os 2 métodos como
+`static` numa classe chamada `Grazer` (_namespace_ `LP1Exercises`), e escreve
+um método `Main` para testar os métodos que criaste.
+
+> [Soluções](../solucoes/02_bases_cs/43.md)
+
+---
+
+44 - Considera o método `Recursao()`:
+
+```cs
+static int Recursao(int n1) {
+    int n2;
+    if (Math.Abs(n1) > 1000) {
+        n2 = n1;
+    } else {
+        n2 = Recursao(-n1 * 10);
+    }
+    return n2;
+}
+```
+
+Considera a seguinte invocação do método `Recursao()`:
+
+```cs
+int n0 = Recursao(5);
+```
+
+Qual é o valor da variável `n0` após a linha de código anterior? Explica o teu
+raciocínio.
+
+_Nota 1_: O método
+[Abs](https://docs.microsoft.com/dotnet/api/system.math.abs#System_Math_Abs_System_Int32_)
+da classe [Math](https://docs.microsoft.com/dotnet/api/system.math)
+(_namespace_ [System](https://docs.microsoft.com/dotnet/api/system))
+devolve o valor absoluto (módulo) do valor passado como argumento.
+
+> [Soluções](../solucoes/02_bases_cs/44.md)
+
+---
+
+45 - Temos um triângulo feito de blocos. A primeira linha do triângulo tem 1
+bloco, a segunda linha tem 2 blocos, a terceira linha tem 3 blocos, e por ai
+fora. Completa o método `Triang`, que, dado o número de linhas, determina
+recursivamente (sem ciclos ou multiplicações) o número total de blocos num
+triângulo deste tipo. Por exemplo, ao receber o valor 4, o método retorna o
+valor 10 correspondente ao número de blocos, como indicado em baixo:
+
+* `*   ` - 1 bloco
+* `**  ` - 2 blocos
+* `*** ` - 3 blocos
+* `****` - 4 blocos
+
+Método devolve 10, pois existem 10 blocos (asteriscos) ao todo.
+
+De modo a testares o método, cria posteriormente um programa que solicite um
+número inteiro ao utilizador, invoque o método `Triang` e imprima no ecrã o
+número devolvido.
+
+```cs
+static int Triang(int linhas)
+{
+    // Completar este método
+}
+```
+
+*Sugerido por [João Duarte](https://github.com/JoaoAlexandreDuarte), adaptado
+de <http://codingbat.com/prob/p194781>.*
+
+> [Soluções](../solucoes/02_bases_cs/45.md)
+
+---
+
+46 - Indica o que é impresso no ecrã pelo seguinte código. Justifica a tua
+resposta.
+
+```cs
+static void Main(string[] args)
+{
+    Console.WriteLine(MetodoRecursivo(5));
+}
+
+static int MetodoRecursivo(int n)
+{
+    if (n == 0)
+        return 0;
+    else if (n % 2 == 0)
+        return 3 + MetodoRecursivo(n - 1);
+    else
+        return 2 + MetodoRecursivo(n - 1);
+}
+```
+
+> [Soluções](../solucoes/02_bases_cs/46.md)
 
 ---
