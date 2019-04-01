@@ -846,3 +846,115 @@ static ulong GCD(ulong a, ulong b) => b == 0 ? a : GCD(b, a % b);
 > [Soluções](../solucoes/02_bases_cs/48.md)
 
 ---
+
+49 - A _stack_ é composta por _frames_. Cada _frame_ está associada a que
+unidade de código? Que informação é contida em cada _frame_?
+
+> [Soluções](../solucoes/02_bases_cs/49.md)
+
+---
+
+50 - Que tipos de dados podem ser guardados na _heap_? E que tipos de dados só
+podem ser guardados na _heap_?
+
+> [Soluções](../solucoes/02_bases_cs/50.md)
+
+---
+
+51 - Indica duas responsabilidades do _garbage collector_.
+
+> [Soluções](../solucoes/02_bases_cs/51.md)
+
+---
+
+52 - É possível, com o C#, aceder à _heap_ sem gestão automática da memória
+(isto é, sem intervenção do _garbage collector_)? Se sim, como?
+
+> [Soluções](../solucoes/02_bases_cs/52.md)
+
+---
+
+53 - Quais as duas grandes famílias de tipos no C#, e quais as principais
+diferenças entre elas? Existe ainda uma terceira família, muito menos usada.
+Indica qual é.
+
+> [Soluções](../solucoes/02_bases_cs/53.md)
+
+---
+
+54 - Qual é o valor da variável `x` após as seguintes instruções.
+
+```cs
+double x = 11.09;
+AddOne(x);
+```
+
+> [Soluções](../solucoes/02_bases_cs/54.md)
+
+---
+
+55 - Indica os conteúdos do  _array_ devolvido pelo método `Process()`.
+
+```cs
+bool[] Process()
+{
+    bool[] a;
+    a = new bool[] { true, true, false, true };
+    MisteryOp(a);
+    return a;
+}
+
+void MisteryOp(bool[] zz)
+{
+    for (int i = 0; i < zz.Length; i++)
+    {
+        zz[i] = !zz[i];
+    }
+}
+```
+
+> [Soluções](../solucoes/02_bases_cs/55.md)
+
+---
+
+56 - Indica os conteúdos do  _array_ devolvido pelo método `Process()`.
+
+```cs
+char[] Process()
+{
+    char[] a;
+    a = new char[] { 'a', 'b', 'c' };
+    MisteryOp(a);
+    return a;
+}
+
+void MisteryOp(char[] a)
+{
+    a = new char[] { a[2], a[1], a[0] };
+}
+```
+
+> [Soluções](../solucoes/02_bases_cs/56.md)
+
+---
+
+57 - Indica os conteúdos do  _array_ devolvido pelo método `Process()`.
+
+```cs
+char[] Process()
+{
+    char[] a;
+    a = new char[] { 'a', 'b', 'c' };
+    MisteryOp(ref a);
+    return a;
+}
+
+void MisteryOp(ref char[] a)
+{
+    a = new char[] { a[2], a[1], a[0] };
+}
+```
+
+> [Soluções](../solucoes/02_bases_cs/57.md)
+
+---
