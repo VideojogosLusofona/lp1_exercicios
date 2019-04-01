@@ -810,3 +810,39 @@ static int MetodoRecursivo(int n)
 > [Soluções](../solucoes/02_bases_cs/46.md)
 
 ---
+
+47 - Indica o que é impresso no ecrã pelo seguinte código. Justifica a tua
+resposta, explicando detalhadamente em que consiste a operação efetuada pelo
+método `Fact()`.
+
+```cs
+static void Main(string[] args)
+{
+    uint n = 5;
+    Console.WriteLine($"{n}! = {Fact(n)}");
+}
+
+static uint Fact(uint i) => i > 1 ? i * Fact(i - 1) : 1;
+```
+
+> [Soluções](../solucoes/02_bases_cs/47.md)
+
+---
+
+48 - Indica o que é impresso no ecrã pelo seguinte código. Justifica a tua
+resposta, explicando em que consiste a operação efetuada pelo método `GCD()`.
+
+```cs
+static void Main(string[] args)
+{
+    ulong a = Convert.ToUInt64(args[0]);
+    ulong b = Convert.ToUInt64(args[1]);
+    Console.WriteLine($"GCD between {a} and {b} is {GCD(a, b)}");
+}
+
+static ulong GCD(ulong a, ulong b) => b == 0 ? a : GCD(b, a % b);
+```
+
+> [Soluções](../solucoes/02_bases_cs/48.md)
+
+---
