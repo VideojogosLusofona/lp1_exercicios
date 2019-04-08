@@ -254,7 +254,7 @@ resultado e terminar a execução. Se não forem indicados três argumentos, ou 
 a operação não for conhecida, o programa deve terminar com uma mensagem de erro
 apropriada.
 
-Exemplo de execução: `./Calc.exe + 3.2 5`, que deverá mostrar `8.2`.
+Exemplo de execução: `dotnet run + 3.2 5`, que deverá mostrar `8.2`.
 
 > [Soluções](../solucoes/02_bases_cs/23.md)
 
@@ -447,5 +447,514 @@ _Nota 3:_ Podes experimentar multiplicar uma matriz por um vetor _online_ em
 http://matrix.reshish.com/multiplication.php.
 
 > [Soluções](../solucoes/02_bases_cs/31.md)
+
+---
+
+32 - Indica o que é mostrado no ecrã pelo seguinte código C#. Justifica a tua
+resposta.
+
+```cs
+byte b = byte.MaxValue - 1;
+
+for (int i = 0; i < 5; i++)
+{
+    Console.WriteLine($"Iteração {i}: {(byte) (++b - 1)}");
+}
+```
+
+> [Soluções](../solucoes/02_bases_cs/32.md)
+
+---
+
+33 - Indica o que é mostrado no ecrã pelo seguinte código C#. Justifica a tua
+resposta.
+
+```cs
+int[] someInts = { 11, 8, 6, 3, 9, 104 };
+
+foreach (int v in someInts)
+{
+    if (v % 2 == 0)
+    {
+        Console.WriteLine("{0,3}", v);
+    }
+}
+```
+
+> [Soluções](../solucoes/02_bases_cs/33.md)
+
+---
+
+34 - Indica o que é mostrado no ecrã pelo seguinte código C#. Justifica a tua
+resposta.
+
+```cs
+int n = 0;
+
+string[] frases = {
+    "Curta",
+    "Uma frase longa",
+    "Small",
+    "Very large sentence",
+    "Petit",
+    "How many words do I have?"
+};
+
+foreach (string s in frases)
+{
+    if (s.Length > 6)
+    {
+        n++;
+    }
+}
+
+Console.WriteLine(n);
+```
+
+> [Soluções](../solucoes/02_bases_cs/34.md)
+
+---
+
+35 - Escreve um programa em C# que solicite ao utilizador dois números inteiros
+sem sinal, e apresente, em hexadecimal, o resultado da operação AND bit a bit
+do primeiro pela negação bit a bit do segundo.
+
+> [Soluções](../solucoes/02_bases_cs/35.md)
+
+---
+
+36 - Escreve um programa que: 1) liste todas as classes num jogo RPG; 2)
+solicite ao utilizador uma das classes (através do valor numérico do respetivo
+membro da enumeração); e, 3) mostre uma descrição textual sobre essa classe. As
+classes existentes neste jogo, e as respetivas descrições, são:
+
+* **Warrior**: Melee hack-and-slash class.
+* **Knight**: Heavy armor class.
+* **Barbarian**: Big guy with an equally big weapon.
+* **Monk**: Melee class that forgoes weapons for their powerful fists.
+* **Archer**: Ranged class with bows or guns.
+* **Thief**: Sneaky bandit with itchy fingers and a nose for treasure.
+* **Priest**: Class who makes sure the party survives an encounter.
+* **Mage**: Class with spells to burn, freeze or electrify.
+* **Druid**: Class capable of summoning minions.
+
+_Referência:_ https://www.giantbomb.com/classes/3015-405/
+
+_Nota:_ Usar `switch` para selecionar a descrição a mostrar.
+
+> [Soluções](../solucoes/02_bases_cs/36.md)
+
+---
+
+37 - Escreve um programa que crie aleatoriamente um mundo de jogo _tile-based_
+2D e o mostre no ecrã. O tamanho do mundo, `x` e `y`, deve ser indicado sob a
+forma de argumentos na linha de comandos. Cada célula (quadrado ou posição) do
+mundo de jogo pode ter, cumulativamente e com a probabilidade indicada, os
+seguintes items:
+
+* Comida - 1,0%
+* Armas - 0,5%
+* Inimigo - 0,5%
+* Armadilha - 0,3%
+
+Os items devem ser representados com _enumerable flags_ (opções enumeráveis),
+assim como as suas combinações. Espaços vazios devem ser representados com um
+espaço, e as várias combinações de items devem ser representados com o caracter
+ASCII obtido pela soma do valor ASCII do espaço (0x20) com o valor numérico do
+item ou combinação de items enumerados. Por exemplo, a comida é representada
+com o carácter `!` (ASCII 0x21), e a combinação de inimigo e armadilha é
+representada com o carácter `,` (ASCII 0x2C).
+
+_Nota 1_: A tabela ASCII pode ser consultada [aqui](https://www.asciitable.com/).
+
+_Nota 2_: Pode facilitar a resolução do problema fazer _debugging_ imprimindo
+no ecrã os conteúdos detalhados de cada posição do mundo de jogo, por exemplo
+para a posição (5,3) pode ser impresso `(5,3) contem 'Comida, Inimigo',
+caráter %`.
+
+_Nota 3_: Podem ser obtidos números aleatórios entre 0 e 1 usando o método
+[NextDouble](https://docs.microsoft.com/dotnet/api/system.random.nextdouble)
+da classe [Random](https://docs.microsoft.com/dotnet/api/system.random)
+(_namespace_ [System](https://docs.microsoft.com/dotnet/api/system)) da
+seguinte forma:
+
+```cs
+// Criar objecto do tipo Random
+Random rng = new Random();
+// Obter double entre 0 e 1
+double probability = rng.NextDouble();
+```
+
+> [Soluções](../solucoes/02_bases_cs/37.md)
+
+---
+
+38 - Considera o seguinte método `Main()`:
+
+```cs
+static void Main(string[] args)
+{
+    // Declaração de variáveis
+    int n;
+    int[] numbers;
+
+    // Pedir ao utilizador o tamanho do array de inteiros
+    Console.Write("Qual o tamanho do array?");
+    n = Convert.ToInt32(Console.ReadLine());
+
+    // Gerar números de 1 até n
+    numbers = CreateNumbersToN(n);
+
+    // Inverter os conteúdos do array
+    Reverse(numbers);
+
+    // Imprimir os conteúdos do array
+    PrintNumbers(numbers);
+}
+```
+
+Implementa, dentro da classe `Program`, os métodos `CreateNumbersToN()`,
+`Reverse()` e `PrintNumbers()` de modo a que façam o que está indicado nos
+respetivos comentários no método `Main()`.
+
+> [Soluções](../solucoes/02_bases_cs/38.md)
+
+---
+
+39 - Considera a seguinte declaração do método
+[Next](https://docs.microsoft.com/dotnet/api/system.random.next#System_Random_Next_System_Int32_System_Int32_)
+(classe [Random](https://docs.microsoft.com/dotnet/api/system.random),
+_namespace_ [System](https://docs.microsoft.com/dotnet/api/system)):
+
+```cs
+public virtual int Next(int minValue, int maxValue);
+```
+
+Indica:
+
+1. O nome do método.
+2. O tipo devolvido pelo método.
+3. Os argumentos aceites pelo método.
+4. A assinatura do método.
+5. Outras características indicadas na declaração.
+6. Se existe algum _overloading_ deste método na classe
+[Random](https://docs.microsoft.com/dotnet/api/system.random), e em caso
+afirmativo, mostrar as respetivas declarações.
+
+> [Soluções](../solucoes/02_bases_cs/39.md)
+
+---
+
+40 - Escreve documentação em formato XML para o método `RockPaperScissors`
+apresentado em baixo, seguindo as melhores práticas para o efeito. Os valores
+`ROCK`, `PAPER` e `SCISSORS` devem ser considerados como constantes inteiras.
+
+```cs
+static int RockPaperScissors(int player1, int player2)
+{
+    if (player1 == player2)
+    {
+        return 0; // Draw
+    }
+    if (((player1 == ROCK) && (player2 == SCISSORS)) ||
+        ((player1 == SCISSORS) && (player2 == PAPER)) ||
+        ((player1 == PAPER) && (player2 == ROCK)))
+    {
+        return 1; // Player 1 wins
+    }
+    else
+    {
+        return 2; // Player 2 wins
+    }
+}
+```
+
+> [Soluções](../solucoes/02_bases_cs/40.md)
+
+---
+
+41 - 1) Reescreve o método `RockPaperScissors` de modo a que siga as melhores
+práticas de legibilidade de código, nomeadamente que tenha apenas um único
+`return` no fim. 2) Escreve um método `Main` para testar o método
+`RockPaperScissors`, nomeadamente pedindo ao jogador um para selecionar uma
+opção (`ROCK`, `PAPER` ou `SCISSORS`), ao jogador dois para fazer o mesmo, e
+apresentando depois o resultado do jogo. 3) Integra os métodos `Main` e
+`RockPaperScissors` numa classe chamada `RPSGame`, _namespace_ `LP1Exercises`.
+
+> [Soluções](../solucoes/02_bases_cs/41.md)
+
+---
+
+42 - Melhora a legibilidade do código do exercício anterior criando duas
+enumerações, uma para indicar o resultado do jogo, outra para definir as
+possíveis jogadas. Mostra o código completo das enumerações criadas e da classe
+`RPSGame`, todas dentro do _namespace_ `LP1Exercises`.
+
+> [Soluções](../solucoes/02_bases_cs/42.md)
+
+---
+
+43 - Considera as seguintes enumerações:
+
+```cs
+enum Terrain
+{
+    Rock = 0,
+    Plains,
+    Forest,
+    Jungle
+}
+enum BonusTerrain
+{
+    Water = 1,
+    Food
+}
+```
+
+Escreve dois métodos _overloaded_ chamados `Eat()`, um que aceite um `Terrain`
+e devolva o valor numérico do respetivo membro da enumeração `Terrain`, e outro
+que aceite um `BonusTerrain` e devolva o valor numérico do respetivo membro da
+enumeração `BonusTerrain` multiplicado por 10. Coloca os 2 métodos como
+`static` numa classe chamada `Grazer` (_namespace_ `LP1Exercises`), e escreve
+um método `Main` para testar os métodos que criaste.
+
+> [Soluções](../solucoes/02_bases_cs/43.md)
+
+---
+
+44 - Considera o método `Recursao()`:
+
+```cs
+static int Recursao(int n1) {
+    int n2;
+    if (Math.Abs(n1) > 1000) {
+        n2 = n1;
+    } else {
+        n2 = Recursao(-n1 * 10);
+    }
+    return n2;
+}
+```
+
+Considera a seguinte invocação do método `Recursao()`:
+
+```cs
+int n0 = Recursao(5);
+```
+
+Qual é o valor da variável `n0` após a linha de código anterior? Explica o teu
+raciocínio.
+
+_Nota 1_: O método
+[Abs](https://docs.microsoft.com/dotnet/api/system.math.abs#System_Math_Abs_System_Int32_)
+da classe [Math](https://docs.microsoft.com/dotnet/api/system.math)
+(_namespace_ [System](https://docs.microsoft.com/dotnet/api/system))
+devolve o valor absoluto (módulo) do valor passado como argumento.
+
+> [Soluções](../solucoes/02_bases_cs/44.md)
+
+---
+
+45 - Temos um triângulo feito de blocos. A primeira linha do triângulo tem 1
+bloco, a segunda linha tem 2 blocos, a terceira linha tem 3 blocos, e por ai
+fora. Completa o método `Triang`, que, dado o número de linhas, determina
+recursivamente (sem ciclos ou multiplicações) o número total de blocos num
+triângulo deste tipo. Por exemplo, ao receber o valor 4, o método retorna o
+valor 10 correspondente ao número de blocos, como indicado em baixo:
+
+* `*   ` - 1 bloco
+* `**  ` - 2 blocos
+* `*** ` - 3 blocos
+* `****` - 4 blocos
+
+Método devolve 10, pois existem 10 blocos (asteriscos) ao todo.
+
+De modo a testares o método, cria posteriormente um programa que solicite um
+número inteiro ao utilizador, invoque o método `Triang` e imprima no ecrã o
+número devolvido.
+
+```cs
+static int Triang(int linhas)
+{
+    // Completar este método
+}
+```
+
+*Sugerido por [João Duarte](https://github.com/JoaoAlexandreDuarte), adaptado
+de <http://codingbat.com/prob/p194781>.*
+
+> [Soluções](../solucoes/02_bases_cs/45.md)
+
+---
+
+46 - Indica o que é impresso no ecrã pelo seguinte código. Justifica a tua
+resposta.
+
+```cs
+static void Main(string[] args)
+{
+    Console.WriteLine(MetodoRecursivo(5));
+}
+
+static int MetodoRecursivo(int n)
+{
+    if (n == 0)
+        return 0;
+    else if (n % 2 == 0)
+        return 3 + MetodoRecursivo(n - 1);
+    else
+        return 2 + MetodoRecursivo(n - 1);
+}
+```
+
+> [Soluções](../solucoes/02_bases_cs/46.md)
+
+---
+
+47 - Indica o que é impresso no ecrã pelo seguinte código. Justifica a tua
+resposta, explicando detalhadamente em que consiste a operação efetuada pelo
+método `Fact()`.
+
+```cs
+static void Main(string[] args)
+{
+    uint n = 5;
+    Console.WriteLine($"{n}! = {Fact(n)}");
+}
+
+static uint Fact(uint i) => i > 1 ? i * Fact(i - 1) : 1;
+```
+
+> [Soluções](../solucoes/02_bases_cs/47.md)
+
+---
+
+48 - Indica o que é impresso no ecrã pelo seguinte código. Justifica a tua
+resposta, explicando em que consiste a operação efetuada pelo método `GCD()`.
+
+```cs
+static void Main(string[] args)
+{
+    ulong a = Convert.ToUInt64(args[0]);
+    ulong b = Convert.ToUInt64(args[1]);
+    Console.WriteLine($"GCD between {a} and {b} is {GCD(a, b)}");
+}
+
+static ulong GCD(ulong a, ulong b) => b == 0 ? a : GCD(b, a % b);
+```
+
+> [Soluções](../solucoes/02_bases_cs/48.md)
+
+---
+
+49 - A _stack_ é composta por _frames_. Cada _frame_ está associada a que
+unidade de código? Que informação é contida em cada _frame_?
+
+> [Soluções](../solucoes/02_bases_cs/49.md)
+
+---
+
+50 - Que tipos de dados podem ser guardados na _heap_? E que tipos de dados só
+podem ser guardados na _heap_?
+
+> [Soluções](../solucoes/02_bases_cs/50.md)
+
+---
+
+51 - Indica duas responsabilidades do _garbage collector_.
+
+> [Soluções](../solucoes/02_bases_cs/51.md)
+
+---
+
+52 - É possível, com o C#, aceder à _heap_ sem gestão automática da memória
+(isto é, sem intervenção do _garbage collector_)? Se sim, como?
+
+> [Soluções](../solucoes/02_bases_cs/52.md)
+
+---
+
+53 - Quais as duas grandes famílias de tipos no C#, e quais as principais
+diferenças entre elas? Existe ainda uma terceira família, muito menos usada.
+Indica qual é.
+
+> [Soluções](../solucoes/02_bases_cs/53.md)
+
+---
+
+54 - Qual é o valor da variável `x` após as seguintes instruções.
+
+```cs
+double x = 11.09;
+AddOne(x);
+```
+
+> [Soluções](../solucoes/02_bases_cs/54.md)
+
+---
+
+55 - Indica os conteúdos do  _array_ devolvido pelo método `Process()`.
+
+```cs
+bool[] Process()
+{
+    bool[] a;
+    a = new bool[] { true, true, false, true };
+    MisteryOp(a);
+    return a;
+}
+
+void MisteryOp(bool[] zz)
+{
+    for (int i = 0; i < zz.Length; i++)
+    {
+        zz[i] = !zz[i];
+    }
+}
+```
+
+> [Soluções](../solucoes/02_bases_cs/55.md)
+
+---
+
+56 - Indica os conteúdos do  _array_ devolvido pelo método `Process()`.
+
+```cs
+char[] Process()
+{
+    char[] a;
+    a = new char[] { 'a', 'b', 'c' };
+    MisteryOp(a);
+    return a;
+}
+
+void MisteryOp(char[] a)
+{
+    a = new char[] { a[2], a[1], a[0] };
+}
+```
+
+> [Soluções](../solucoes/02_bases_cs/56.md)
+
+---
+
+57 - Indica os conteúdos do  _array_ devolvido pelo método `Process()`.
+
+```cs
+char[] Process()
+{
+    char[] a;
+    a = new char[] { 'a', 'b', 'c' };
+    MisteryOp(ref a);
+    return a;
+}
+
+void MisteryOp(ref char[] a)
+{
+    a = new char[] { a[2], a[1], a[0] };
+}
+```
+
+> [Soluções](../solucoes/02_bases_cs/57.md)
 
 ---
