@@ -305,7 +305,7 @@ Console.WriteLine($"Last turn was {turn}");
 ---
 
 26 - Implementa um jogo _turn-based_, com o número máximo de _turns_ dado como
-argumento na linha de comando. O jogo deve decorrer em quanto o jogador estiver
+argumento na linha de comando. O jogo deve decorrer enquanto o jogador estiver
 vivo e enquanto o número máximo de _turns_ não tiver sido atingido. Em cada
 _turn_ o jogador tem uma probabilidade de morrer de 2%. Se o jogador não morrer
 numa dada _turn_, deve ser apresentada a mensagem `Player has survived turn #3`
@@ -317,9 +317,9 @@ _Nota 1_: O "jogo" não é interativo, simplesmente apresenta uma mensagem por
 _turn_.
 
 _Nota 2_: Podem ser obtidos números aleatórios entre 0 e 1 usando o método
-[NextDouble](https://docs.microsoft.com/pt-pt/dotnet/api/system.random.nextdouble)
-da classe [Random](https://docs.microsoft.com/pt-pt/dotnet/api/system.random)
-(_namespace_ [System](https://docs.microsoft.com/pt-pt/dotnet/api/system)) da
+[NextDouble](https://docs.microsoft.com/dotnet/api/system.random.nextdouble)
+da classe [Random](https://docs.microsoft.com/dotnet/api/system.random)
+(_namespace_ [System](https://docs.microsoft.com/dotnet/api/system)) da
 seguinte forma:
 
 ```cs
@@ -328,6 +328,7 @@ Random rng = new Random();
 // Obter double entre 0 e 1
 double probability = rng.NextDouble();
 ```
+
 > [Soluções](../solucoes/02_bases_cs/26.md)
 
 ---
@@ -808,5 +809,153 @@ static int MetodoRecursivo(int n)
 ```
 
 > [Soluções](../solucoes/02_bases_cs/46.md)
+
+---
+
+47 - Indica o que é impresso no ecrã pelo seguinte código. Justifica a tua
+resposta, explicando detalhadamente em que consiste a operação efetuada pelo
+método `Fact()`.
+
+```cs
+static void Main(string[] args)
+{
+    uint n = 5;
+    Console.WriteLine($"{n}! = {Fact(n)}");
+}
+
+static uint Fact(uint i) => i > 1 ? i * Fact(i - 1) : 1;
+```
+
+> [Soluções](../solucoes/02_bases_cs/47.md)
+
+---
+
+48 - Indica o que é impresso no ecrã pelo seguinte código. Justifica a tua
+resposta, explicando em que consiste a operação efetuada pelo método `GCD()`.
+
+```cs
+static void Main(string[] args)
+{
+    ulong a = Convert.ToUInt64(args[0]);
+    ulong b = Convert.ToUInt64(args[1]);
+    Console.WriteLine($"GCD between {a} and {b} is {GCD(a, b)}");
+}
+
+static ulong GCD(ulong a, ulong b) => b == 0 ? a : GCD(b, a % b);
+```
+
+> [Soluções](../solucoes/02_bases_cs/48.md)
+
+---
+
+49 - A _stack_ é composta por _frames_. Cada _frame_ está associada a que
+unidade de código? Que informação é contida em cada _frame_?
+
+> [Soluções](../solucoes/02_bases_cs/49.md)
+
+---
+
+50 - Que tipos de dados podem ser guardados na _heap_? E que tipos de dados só
+podem ser guardados na _heap_?
+
+> [Soluções](../solucoes/02_bases_cs/50.md)
+
+---
+
+51 - Indica duas responsabilidades do _garbage collector_.
+
+> [Soluções](../solucoes/02_bases_cs/51.md)
+
+---
+
+52 - É possível, com o C#, aceder à _heap_ sem gestão automática da memória
+(isto é, sem intervenção do _garbage collector_)? Se sim, como?
+
+> [Soluções](../solucoes/02_bases_cs/52.md)
+
+---
+
+53 - Quais as duas grandes famílias de tipos no C#, e quais as principais
+diferenças entre elas? Existe ainda uma terceira família, muito menos usada.
+Indica qual é.
+
+> [Soluções](../solucoes/02_bases_cs/53.md)
+
+---
+
+54 - Qual é o valor da variável `x` após as seguintes instruções.
+
+```cs
+double x = 11.09;
+AddOne(x);
+```
+
+> [Soluções](../solucoes/02_bases_cs/54.md)
+
+---
+
+55 - Indica os conteúdos do  _array_ devolvido pelo método `Process()`.
+
+```cs
+bool[] Process()
+{
+    bool[] a;
+    a = new bool[] { true, true, false, true };
+    MisteryOp(a);
+    return a;
+}
+
+void MisteryOp(bool[] zz)
+{
+    for (int i = 0; i < zz.Length; i++)
+    {
+        zz[i] = !zz[i];
+    }
+}
+```
+
+> [Soluções](../solucoes/02_bases_cs/55.md)
+
+---
+
+56 - Indica os conteúdos do  _array_ devolvido pelo método `Process()`.
+
+```cs
+char[] Process()
+{
+    char[] a;
+    a = new char[] { 'a', 'b', 'c' };
+    MisteryOp(a);
+    return a;
+}
+
+void MisteryOp(char[] a)
+{
+    a = new char[] { a[2], a[1], a[0] };
+}
+```
+
+> [Soluções](../solucoes/02_bases_cs/56.md)
+
+---
+
+57 - Indica os conteúdos do  _array_ devolvido pelo método `Process()`.
+
+```cs
+char[] Process()
+{
+    char[] a;
+    a = new char[] { 'a', 'b', 'c' };
+    MisteryOp(ref a);
+    return a;
+}
+
+void MisteryOp(ref char[] a)
+{
+    a = new char[] { a[2], a[1], a[0] };
+}
+```
+
+> [Soluções](../solucoes/02_bases_cs/57.md)
 
 ---
