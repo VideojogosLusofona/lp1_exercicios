@@ -305,7 +305,7 @@ Console.WriteLine($"Last turn was {turn}");
 ---
 
 26 - Implementa um jogo _turn-based_, com o número máximo de _turns_ dado como
-argumento na linha de comando. O jogo deve decorrer em quanto o jogador estiver
+argumento na linha de comando. O jogo deve decorrer enquanto o jogador estiver
 vivo e enquanto o número máximo de _turns_ não tiver sido atingido. Em cada
 _turn_ o jogador tem uma probabilidade de morrer de 2%. Se o jogador não morrer
 numa dada _turn_, deve ser apresentada a mensagem `Player has survived turn #3`
@@ -317,9 +317,9 @@ _Nota 1_: O "jogo" não é interativo, simplesmente apresenta uma mensagem por
 _turn_.
 
 _Nota 2_: Podem ser obtidos números aleatórios entre 0 e 1 usando o método
-[NextDouble](https://docs.microsoft.com/pt-pt/dotnet/api/system.random.nextdouble)
-da classe [Random](https://docs.microsoft.com/pt-pt/dotnet/api/system.random)
-(_namespace_ [System](https://docs.microsoft.com/pt-pt/dotnet/api/system)) da
+[NextDouble](https://docs.microsoft.com/dotnet/api/system.random.nextdouble)
+da classe [Random](https://docs.microsoft.com/dotnet/api/system.random)
+(_namespace_ [System](https://docs.microsoft.com/dotnet/api/system)) da
 seguinte forma:
 
 ```cs
@@ -328,6 +328,7 @@ Random rng = new Random();
 // Obter double entre 0 e 1
 double probability = rng.NextDouble();
 ```
+
 > [Soluções](../solucoes/02_bases_cs/26.md)
 
 ---
