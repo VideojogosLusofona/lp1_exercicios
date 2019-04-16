@@ -55,7 +55,7 @@ métodos e por ai fora.
 
 4 - A classe
 [`Queue`](https://docs.microsoft.com/dotnet/api/system.collections.queue)
-(_namespace_ [System.Collections](https://docs.microsoft.com/dotnet/api/system.collections))
+(_namespace_ [`System.Collections`](https://docs.microsoft.com/dotnet/api/system.collections))
 implementa a estrutura de dados
 [queue/fila],
 na qual a primeira coisa a ser inserida é a primeira a ser retirada. Objetos do
