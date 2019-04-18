@@ -89,7 +89,7 @@ utilizador selecionar a opção 4.
 // Construtor que cria uma nova instância de Line com as coordenadas indicadas
 public Line(double x1, double y1, double x2, double y2);
 
-// Método que indica se a linha atual cruza com a linha indicada no primeiro
+// Método que indica se esta linha cruza com a linha indicada no primeiro
 // argumento
 public bool Cross(Line otherLine);
 ```
