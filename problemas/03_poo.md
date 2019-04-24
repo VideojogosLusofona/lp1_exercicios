@@ -190,8 +190,6 @@ para testar exaustivamente todos os métodos da classe `Car`.
 
 ---
 
-<!--
-
 11 - Modifica todos os tipos criados no exercício anterior (`Car`, `Fuel` e
 `TestCar`) de modo a que façam uso de propriedades e sintaxe de inicialização
 de objetos com propriedades. Qual é a versão com menos código _boilerplate_?
@@ -250,11 +248,9 @@ pedido.
 
 > [Soluções](../solucoes/03_poo/13.md)
 
+---
 
-
-
-
-12 - Cria uma classe estática chamada `Program` com um único método estático
+14 - Cria uma classe estática chamada `Program` com um único método estático
 `Main()`. Neste método devem ser solicitadas ao utilizador as coordenadas `x`,
 `y` e `z` de um vetor 3D, devendo depois o método mostrar o comprimento do
 vetor.
@@ -262,8 +258,7 @@ vetor.
 Para a resolução deste exercício é obrigatório usar um tipo anónimo, sem
 variáveis intermédias, para guardar as coordenadas do vector.
 
-> [Soluções](../solucoes/03_poo/12.md)
+> [Soluções](../solucoes/03_poo/14.md)
 
 ---
 
--->
