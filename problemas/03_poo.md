@@ -262,3 +262,205 @@ variáveis intermédias, para guardar as coordenadas do vector.
 
 ---
 
+15 - Explica por palavras tuas o significado dos seguintes termos:
+
+* Classe
+* Objeto / instância
+* Método
+* Construtor
+* Variável de instância
+* Propriedade
+* Variável de suporte
+* Variável local
+* _Overloading_
+* Encapsulação
+
+> [Soluções](../solucoes/03_poo/15.md)
+
+---
+
+16 - Indica duas das principais diferenças entre _structs_ e classes.
+
+> [Soluções](../solucoes/03_poo/16.md)
+
+---
+
+17 - Em que parte da memória são colocadas as variáveis do tipo _struct_ quando
+guardadas num _array_? Porquê?
+
+> [Soluções](../solucoes/03_poo/17.md)
+
+---
+
+18 - Estuda, analisa e executa o projeto [18](03_poo/18). Considerando que as
+_structs_ são tipos de valor, explica a razão de neste caso a alteração de
+campos de uma _struct_ dentro de um método também se repercutir fora do método.
+
+> [Soluções](../solucoes/03_poo/18.md)
+
+---
+
+19 - Explica porque razão as _structs_ não podem ter o valor `null`.
+
+> [Soluções](../solucoes/03_poo/19.md)
+
+---
+
+20 - Explica o que são tipos imutáveis e quais são as vantagens dos mesmos. Dá
+um exemplo (em código) de um tipo imutável.
+
+> [Soluções](../solucoes/03_poo/20.md)
+
+---
+
+21 - Explica por palavras tuas o significado e/ou para que servem os seguintes
+conceitos e _keywords_:
+
+* Herança
+* Classe base/superclasse
+* Classe derivada/subclasse
+* _Keyword_ `is`
+* _Keyword_ `as`
+* _Keyword_ `protected`
+* _Keyword_ `sealed`
+
+> [Soluções](../solucoes/03_poo/21.md)
+
+---
+
+22 - Considera a seguinte classe e indica, justificando, se a mesma é
+imutável ou não.
+
+```cs
+public class Map
+{
+    public float Width { get; }
+    public float Height { get; }
+    public int NumberOfBosses { get; }
+    protected ulong highScore;
+    protected string name;
+
+    public Map(float width, float height, int numberOfBosses, ulong highScore, string name)
+    {
+        Width = width;
+        Height = height;
+        NumberOfBosses = numberOfBosses;
+        this.highScore = highScore;
+        this.name = name;
+    }
+}
+```
+
+> [Soluções](../solucoes/03_poo/22.md)
+
+---
+
+<a name="ex23"></a>
+23 - Considera o seguinte código:
+
+```cs
+public struct Bullet
+{
+    private float calibre;
+    public float Calibre
+    {
+        get { return calibre; }
+        set { if (value < 0.1f) calibre = 0.1f; else calibre = value; }
+    }
+}
+public class Weapon
+{
+    public float Value { get; }
+    public Weapon(float value) { Value = value; }
+}
+public class Gun : Weapon
+{
+    private Bullet[] bullets;
+    public Gun(float value, int numBullets, float calibre) : base(value)
+    {
+        bullets = new Bullet[numBullets];
+        for (int i = 0; i < numBullets; i++)
+        {
+            bullets[i] = new Bullet() { Calibre = calibre };
+        }
+    }
+}
+```
+
+a) Escreve uma linha de código que: a) crie uma instância de `Gun` com valor
+(`value`) 50.0 e três `Bullet`s de calibre 0.5; e, b) guarde essa instância
+numa variável do tipo `Weapon`.
+
+b) Adiciona uma propriedade à classe `Gun` chamada `NumberOfBullets`, só de
+leitura, que retorne o número de `Bullet`s existentes numa instância de `Gun`.
+
+> [Soluções](../solucoes/03_poo/23.md)
+
+---
+
+<a name="ex24"></a>
+24 - Considera o seguinte código:
+
+```cs
+public struct Passenger
+{
+    private double weight;
+    public double Weight
+    {
+        get { return weight; }
+        set { if (value < 5) weight = 5; else weight = value; }
+    }
+}
+public class Vehicle
+{
+    public double Value { get; }
+    public Vehicle(double value) { Value = value; }
+}
+public class Car : Vehicle
+{
+    private Passenger[] passengers;
+    public Car(double value, int numPassengers, float avgWeight) : base(value)
+    {
+        Random r = new Random();
+        passengers = new Passenger[numPassengers];
+        for (int i = 0; i < numPassengers; i++)
+        {
+            passengers[i] = new Passenger()
+            {
+                Weight = avgWeight + r.Next(-10, 10)
+            };
+        }
+    }
+}
+```
+
+a) Escreve uma linha de código que: a) crie uma instância de `Car` com valor
+(`value`) 2550.0 e três `Passenger`s com peso médio (`avgWeight`) 70; e, b)
+guarde essa instância numa variável do tipo `Vehicle`.
+
+b) Adiciona um método à classe `Car` chamado `GetTotalWeight()` que retorne o
+peso total dos passageiros numa instância de `Car`.
+
+> [Soluções](../solucoes/03_poo/24.md)
+
+---
+
+<!--
+<a name="ex25"></a>
+25 - Cria uma nova solução em Visual Studio com as seguintes classes:
+
+* Classe abstrata `Character` com:
+  * Propriedade _read-only_ `Name` do tipo `string`
+  * Método `Move()` abstrato, que retorna um `char` indicando a direção seguida
+    (`'N'`, `'S'`, `'W'` ou `'E'`)
+* Classe `NPC`, estende `Character`, com:
+  * Método `Move()` que retorna direção aleatória
+* Classe `Player`, estende `Character`, com:
+  * Método `Move()` que retorna direção após solicitar a mesma ao jogador
+    através das teclas *W*, *S*, *A* e *D*
+* Classe `Program` com método `Main()` para testar as classes anteriores
+
+> [Soluções](../solucoes/03_poo/25.md)
+
+---
+-->
