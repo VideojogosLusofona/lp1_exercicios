@@ -608,46 +608,57 @@ a cada uma destas questões):
    discutidas até ao momento.
 
 ```cs
+// Instrução 1
 PowerUp pu = new PowerUp();
 ```
 
 ```cs
+// Instrução 2
 GameObject go = new GameObject();
 ```
 
 ```cs
+// Instrução 3
 Trap t = new Trap();
 ```
 
 ```cs
+// Instrução 4
 ITaggable it = new ITaggable();
 ```
 
 ```cs
+// Instrução 5
 go.DisableTrap(); // go é uma variável do tipo GameObject
 ```
 
 ```cs
+// Instrução 6
 PowerUp armorPack = new GameObject();
 ```
 
 ```cs
+// Instrução 7
 int p = gobj.DisableTrap; // gobj é do tipo Trap
 ```
 
 ```cs
+// Instrução 8
 Console.WriteLine($“{trap.Tag}”); // trap é uma instância de Trap
 ```
 
 ```cs
+// Instrução 9
 GameObject go = new Trap();
 ```
 
 ```cs
+// Instrução 10
 GameObject go = new PowerUp();
 ```
 
 ```cs
+// Instrução 11
 Console.WriteLine($“{pup.Priority}”); // pup é uma instância de PowerUp
 ```
 
