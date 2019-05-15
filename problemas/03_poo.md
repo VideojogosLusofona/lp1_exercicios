@@ -562,8 +562,101 @@ Responde às seguintes questões:
 
 ---
 
+31 - Considera o seguinte código:
+
+```cs
+public abstract class GameObject
+{
+    public float X { get; protected set; }
+    public float Y { get; protected set; }
+    public abstract int Priority();
+    public virtual bool IsActive() { return true; }
+}
+```
+
+```cs
+public class Trap : GameObject
+{
+    public override int Priority() { return int.MaxValue; }
+    public void DisableTrap() { Console.WriteLine("Trap is now disabled."); }
+}
+```
+
+```cs
+public interface ITaggable
+{
+    string Tag { get; set; }
+}
+```
+
+Responde às seguintes questões (neste exercício aceitam-se soluções separadas
+a cada uma destas questões):
+
+1. Apresenta o código da classe `PowerUp` que estende `GameObject` e implementa
+   a interface `ITaggable`. A prioridade deve ser igual ao comprimento da
+   *tag*. Deves sobrepor o método `IsActive()` de modo a retorne `false` se a
+   *tag* for `null` ou com comprimento igual a zero, e `true` caso contrário.
+2. Sobrepõe o método `ToString()` na classe `PowerUp` de modo a que devolva uma
+   *string* que inclua `X` , `Y` e `Tag`. Os números reais devem aparecer com 2
+   dígitos significativos.
+3. Se `armorPack` for uma instância da classe `PowerUp`, qual a instrução que
+   define o valor da sua *tag* como "Armor+75"?
+4. Indica, justificando, quais das seguintes instruções são válidas e quais são
+   inválidas. As instruções são independentes umas das outras, e naquelas que
+   não implicam criação de objetos presume-se que o(s) objeto(s) em questão já
+   foram instanciados. Assume que todas as instruções ocorrem fora das classes
+   discutidas até ao momento.
+
+```cs
+PowerUp pu = new PowerUp();
+```
+
+```cs
+GameObject go = new GameObject();
+```
+
+```cs
+Trap t = new Trap();
+```
+
+```cs
+ITaggable it = new ITaggable();
+```
+
+```cs
+go.DisableTrap(); // go é uma variável do tipo GameObject
+```
+
+```cs
+PowerUp armorPack = new GameObject();
+```
+
+```cs
+int p = gobj.DisableTrap; // gobj é do tipo Trap
+```
+
+```cs
+Console.WriteLine($“{trap.Tag}”); // trap é uma instância de Trap
+```
+
+```cs
+GameObject go = new Trap();
+```
+
+```cs
+GameObject go = new PowerUp();
+```
+
+```cs
+Console.WriteLine($“{pup.Priority}”); // pup é uma instância de PowerUp
+```
+
+> [Soluções](../solucoes/03_poo/31.md)
+
+---
+
 <!--
-31 - Estás a desenvolver um jogo, e tanto o jogador como os NPCs, representados
+32 - Estás a desenvolver um jogo, e tanto o jogador como os NPCs, representados
 de forma abstrata pela classe `GameCharacter`, transportam itens do tipo
 `IGameItem`. Os itens de cada `GameCharacter` estão guardados numa coleção
 genérica do tipo [HashSet&lt;T&gt;][], representada pela variável de instância
@@ -582,5 +675,5 @@ Escreve um método chamado `GetPotentialEnergyOfBurnableItems()`, pertencente à
 classe `GameCharacter`, que devolve a energia potencial de todos os itens
 queimáveis transportados pelo jogador ou por um NPC.
 
-> [Soluções](../solucoes/03_poo/31.md)
+> [Soluções](../solucoes/03_poo/32.md)
 -->
