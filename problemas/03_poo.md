@@ -445,7 +445,6 @@ peso total dos passageiros numa instância de `Car`.
 
 ---
 
-<!--
 <a name="ex25"></a>
 25 - Cria uma nova solução em Visual Studio com as seguintes classes:
 
@@ -454,13 +453,134 @@ peso total dos passageiros numa instância de `Car`.
   * Método `Move()` abstrato, que retorna um `char` indicando a direção seguida
     (`'N'`, `'S'`, `'W'` ou `'E'`)
 * Classe `NPC`, estende `Character`, com:
-  * Método `Move()` que retorna direção aleatória
+  * Método `Move()` sobreposto que retorna direção aleatória
 * Classe `Player`, estende `Character`, com:
-  * Método `Move()` que retorna direção após solicitar a mesma ao jogador
-    através das teclas *W*, *S*, *A* e *D*
+  * Método `Move()` sobreposto que retorna direção após solicitar a mesma ao
+    jogador através das teclas *W*, *S*, *A* e *D*
 * Classe `Program` com método `Main()` para testar as classes anteriores
 
 > [Soluções](../solucoes/03_poo/25.md)
 
 ---
+
+26 - Indica, justificando, se as seguintes afirmações são verdadeiras ou
+falsas:
+
+1. O polimorfismo permite que classes derivadas ofereçam implementações
+   alternativas de métodos na classe base
+2. A _keyword_ `override` indica que um método na subclasse é uma
+   extensão/sobreposição de um método na superclasse
+3. A _keyword_ `new` indica que um método na subclasse é uma
+   extensão/sobreposição de um método na superclasse
+4. Métodos `abstract` podem existir em classes não-`abstract`
+5. Métodos não-`abstract` podem existir em classes `abstract`
+6. Subclasses podem sobrepor métodos `virtual` da superclasse
+7. Subclasses podem sobrepor métodos `abstract` da superclasse
+8. Numa subclasse é possível sobrepor (`override`) um método não-`virtual` e
+   não-`abstract` da superclasse
+
+> [Soluções](../solucoes/03_poo/26.md)
+
+---
+
+27 - Responde às seguintes questões sobre interfaces e herança:
+
+1. Qual a _keyword_ para declarar uma interface?
+2. Qual é a visibilidade dos membros de uma interface?
+3. Uma classe que implementa uma interface tem de fornecer implementações de
+   todos os membros da interface?
+4. Uma classe que implementa uma interface pode ter membros que não estão
+   definidos na interface?
+5. Uma classe pode estender mais do que uma classe base?
+6. Uma classe pode implementar mais do que uma interface?
+7. As _structs_ podem implementar interfaces?
+
+> [Soluções](../solucoes/03_poo/27.md)
+
+---
+
+28 - Qual a diferença prática entre as _keywords_ `override` e `new` na
+declaração de um método? Dá um exemplo.
+_Nota: se o exemplo for retirado de algum lado não te esqueças de incluir a
+referência._
+
+> [Soluções](../solucoes/03_poo/28.md)
+
+---
+
+29 - Escreve o código de uma classe que contenha:
+
+* Uma variável de instância só de leitura
+* Uma propriedade (de instância) só de leitura
+* Uma variável de classe só de leitura
+* Uma propriedade de classe só de leitura
+* Um construtor que inicialize as variáveis/propriedades relevantes
+
+A classe deve ser adequadamente comentada, com explicações ou descrições sobre
+o que cada linha de código faz ou representa.
+
+> [Soluções](../solucoes/03_poo/29.md)
+
+---
+
+30 - Considera um projeto com as seguintes classes:
+
+```cs
+public class Tree
+{
+    private string type;
+    private float height;
+
+    public Tree(string type, float height)
+    {
+        this.type = type;
+        this.height = height;
+    }
+}
+```
+
+```cs
+using System;
+public class Program
+{
+    public static void Main()
+    {
+        Console.WriteLine(new Tree("Pinetree", 5.5f));
+    }
+}
+```
+
+Responde às seguintes questões:
+
+1. O que é impresso quando o projeto é executado?
+2. O que é necessário fazer para que seja impresso um valor personalizado
+   quando "imprimimos" uma instância de determinado tipo?
+3. Adiciona o código necessário à classe `Tree` de modo a que, ao ser impressa
+   uma instância da mesma, seja possível observar o tipo e a altura da árvore.
+
+> [Soluções](../solucoes/03_poo/30.md)
+
+---
+
+<!--
+31 - Estás a desenvolver um jogo, e tanto o jogador como os NPCs, representados
+de forma abstrata pela classe `GameCharacter`, transportam itens do tipo
+`IGameItem`. Os itens de cada `GameCharacter` estão guardados numa coleção
+genérica do tipo [HashSet&lt;T&gt;][], representada pela variável de instância
+`items`. Alguns destes itens podem implementar a interface `IBurnable`,
+representada pelo seguinte código:
+
+```cs
+public interface IBurnable
+{
+    float PotentialEnergy { get; }
+    void Burn();
+}
+```
+
+Escreve um método chamado `GetPotentialEnergyOfBurnableItems()`, pertencente à
+classe `GameCharacter`, que devolve a energia potencial de todos os itens
+queimáveis transportados pelo jogador ou por um NPC.
+
+> [Soluções](../solucoes/03_poo/31.md)
 -->
