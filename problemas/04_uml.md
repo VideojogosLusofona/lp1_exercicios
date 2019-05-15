@@ -59,7 +59,6 @@ nome do tipo, relações entre os tipos, e cardinalidade) para o código do
 
 ---
 
-<!--
 5 - Desenha o diagrama UML de classes completo para o
 [exercício 25](03_poo.md#ex25) de Programação por Objetos.
 
@@ -76,4 +75,10 @@ diagrama.
 > [Soluções](../solucoes/04_uml/06.md)
 
 ---
--->
+
+7 - Desenha o diagrama UML de classes completo para o
+[exercício 31](03_poo.md#ex31) de Programação por Objetos.
+
+> [Soluções](../solucoes/04_uml/07.md)
+
+---

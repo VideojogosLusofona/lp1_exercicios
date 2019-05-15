@@ -562,6 +562,7 @@ Responde às seguintes questões:
 
 ---
 
+<a name="ex31"></a>
 31 - Considera o seguinte código:
 
 ```cs
