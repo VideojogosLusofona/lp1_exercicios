@@ -645,7 +645,7 @@ int p = gobj.DisableTrap; // gobj é do tipo Trap
 
 ```cs
 // Instrução 8
-Console.WriteLine($“{trap.Tag}”); // trap é uma instância de Trap
+Console.WriteLine($"{trap.Tag}"); // trap é uma instância de Trap
 ```
 
 ```cs
@@ -660,7 +660,7 @@ GameObject go = new PowerUp();
 
 ```cs
 // Instrução 11
-Console.WriteLine($“{pup.Priority}”); // pup é uma instância de PowerUp
+Console.WriteLine($"{pup.Priority()}"); // pup é uma instância de PowerUp
 ```
 
 > [Soluções](../solucoes/03_poo/31.md)
