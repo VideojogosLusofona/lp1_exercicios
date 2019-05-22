@@ -57,7 +57,7 @@ métodos e por ai fora.
 [`Queue`](https://docs.microsoft.com/dotnet/api/system.collections.queue)
 (_namespace_ [`System.Collections`](https://docs.microsoft.com/dotnet/api/system.collections))
 implementa a estrutura de dados
-[queue/fila],
+[queue/fila](https://en.wikipedia.org/wiki/Queue_(abstract_data_type)),
 na qual a primeira coisa a ser inserida é a primeira a ser retirada. Objetos do
 tipo `Queue` podem ser instanciados com o construtor simples
 [`Queue()`](https://docs.microsoft.com/dotnet/api/system.collections.queue.-ctor#System_Collections_Queue__ctor).
