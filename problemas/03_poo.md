@@ -667,13 +667,49 @@ Console.WriteLine($"{pup.Priority()}"); // pup é uma instância de PowerUp
 
 ---
 
-<!--
-32 - Estás a desenvolver um jogo, e tanto o jogador como os NPCs, representados
+32 - Quais as diferenças entre as
+[coleções não-genéricas](https://docs.microsoft.com/dotnet/api/system.collections)
+e as
+[coleções genéricas](https://docs.microsoft.com/dotnet/api/system.collections.generic)
+no C#? Quais as vantagens destas últimas?
+
+> [Soluções](../solucoes/03_poo/32.md)
+
+---
+
+33 - O C# providencia um conjunto bastante completo de
+[coleções genéricas](https://docs.microsoft.com/dotnet/api/system.collections.generic).
+Algumas das mais usadas são as que se seguem:
+
+* [List&lt;T&gt;](https://docs.microsoft.com/dotnet/api/system.collections.generic.list-1)
+* [Queue&lt;T&gt;](https://docs.microsoft.com/dotnet/api/system.collections.generic.queue-1)
+* [Stack&lt;T&gt;](https://docs.microsoft.com/dotnet/api/system.collections.generic.stack-1)
+* [HashSet&lt;T&gt;](https://docs.microsoft.com/dotnet/api/system.collections.generic.hashset-1)
+* [Dictionary&lt;K,V&gt;](https://docs.microsoft.com/dotnet/api/system.collections.generic.dictionary-2)
+
+Responde às seguintes questões:
+
+1. Qual a interface genérica comum a todas estas coleções? Que comportamento
+   ficam as classes obrigadas a ter devido a implementarem essa interface?
+2. Explica sucintamente como estas coleções funcionam e dá exemplos onde cada
+   uma seja especialmente útil.
+3. Além das coleções mencionadas, existem mais coleções genéricas no
+  _namespace_
+  [System.Collections.Generic](https://docs.microsoft.com/dotnet/api/system.collections.generic).
+  Dá o exemplo de uma, explica sucintamente como funciona e dá um exemplo onde
+  a mesma possa ser especialmente útil.
+
+> [Soluções](../solucoes/03_poo/33.md)
+
+---
+
+34 - Estás a desenvolver um jogo, e tanto o jogador como os NPCs, representados
 de forma abstrata pela classe `GameCharacter`, transportam itens do tipo
 `IGameItem`. Os itens de cada `GameCharacter` estão guardados numa coleção
-genérica do tipo [HashSet&lt;T&gt;][], representada pela variável de instância
-`items`. Alguns destes itens podem implementar a interface `IBurnable`,
-representada pelo seguinte código:
+genérica do tipo
+[HashSet&lt;T&gt;](https://docs.microsoft.com/dotnet/api/system.collections.generic.hashset-1),
+representada pela variável de instância `items`. Alguns destes itens podem
+implementar a interface `IBurnable`, representada pelo seguinte código:
 
 ```cs
 public interface IBurnable
@@ -687,5 +723,216 @@ Escreve um método chamado `GetPotentialEnergyOfBurnableItems()`, pertencente à
 classe `GameCharacter`, que devolve a energia potencial de todos os itens
 queimáveis transportados pelo jogador ou por um NPC.
 
-> [Soluções](../solucoes/03_poo/32.md)
+> [Soluções](../solucoes/03_poo/34.md)
+
+---
+
+35 - Considera o seguinte tipo:
+
+```cs
+public struct GameMap
+{
+    private float topScore;
+    private int gamesPlayed;
+    private int gamesWon;
+
+    public string Name { get; }
+    public string Filename { get; }
+    public float SuccessRate
+    {
+        get {
+            if (gamesPlayed == 0)
+                return 0f;
+            else
+                return gamesWon / (float) gamesPlayed;
+        }
+    }
+    public float TopScore {
+        get
+        {
+            return topScore;
+        }
+        set
+        {
+            if (value > topScore)
+            {
+                topScore = value;
+            }
+        }
+    }
+
+    public GameMap(string name, string filename)
+    {
+        Name = name;
+        Filename = filename;
+        gamesPlayed = 0;
+        gamesWon = 0;
+        topScore = 0;
+    }
+
+    public void GamePlayed(bool won)
+    {
+        gamesPlayed++;
+        if (won)
+        {
+            gamesWon++;
+        }
+    }
+}
+```
+
+Responde às seguintes questões relativas ao tipo apresentado:
+
+1. O tipo apresentado é de valor ou referência? Justifica a tua resposta.
+2. Identifica as variáveis de instância e explica o seu propósito.
+3. Identifica as propriedades auto-implementadas.
+4. Identifica as propriedades só de leitura.
+5. Identifica os construtores.
+6. Identifica os métodos de instância.
+7. Escreve a documentação XML apropriada para a classe e respetivos membros.
+8. Escreve um método `static` que recebe um iterável de `GameMap` e imprime
+   uma tabela bem formatada com informação sobre os mesmos, tal como
+   representado na seguinte figura:
+
+```
+Name              Filename      Sucess Rate    Top Score
+--------------------------------------------------------
+Hell              hell.map           30.2 %     5069.921
+Beach             beach.map          44.0 %     2231.887
+Valley            valley.map         72.1 %      131.090
+Work              work.map           44.4 %     2334.114
+School            school.map         11.5 %       40.587
+Graveyard         graveyard.map      69.8 %     1631.103
+Mars              mars.map           92.1 %     2257.178
+```
+
+> [Soluções](../solucoes/03_poo/35.md)
+
+---
+
+36 - Escreve um método `static` que inicialize e devolva uma
+[lista genérica](https://docs.microsoft.com/dotnet/api/system.collections.generic.list-1)
+contendo _n_ cópias de um valor passado como parâmetro e tipo especificado como
+argumento genérico.
+
+> [Soluções](../solucoes/03_poo/36.md)
+
+---
+
+<a name="ex37"></a>
+37 - Considera a seguinte classe:
+
+```cs
+public abstract class NPC
+{
+    public float HP { get; protected set; }
+
+    public NPC(float hp)
+    {
+        HP = hp;
+    }
+
+    public void PlayTurn()
+    {
+        if (FindEnemies())
+        {
+            AttackEnemies();
+        }
+        if (FindFood())
+        {
+            EatFood();
+        }
+        Move();
+    }
+
+    protected abstract bool FindFood();
+    protected abstract bool FindEnemies();
+    protected abstract void EatFood();
+    protected abstract void AttackEnemies();
+
+    protected virtual void Move()
+    {
+        Console.WriteLine(this.GetType() + " has moved!");
+    }
+}
+```
+
+Responde às seguintes questões:
+
+1. É possível instanciar esta classe? Porquê?
+2. É possível estender esta classe? Porquê?
+3. Que métodos desta classe podem ser sobrepostos (_overridden_)? Porquê?
+4. Que métodos desta classe **não** podem ser sobrepostos (_overridden_)?
+   Porquê?
+
+Este exercício continua no [problema 8](04_uml.md#ex8) de UML e design de
+classes.
+
+> [Soluções](../solucoes/03_poo/37.md)
+
+---
+
+38 - Considera a seguinte classe:
+
+```cs
+public class Texture
+{
+    private string textureFile;
+
+    public Texture(string textureFile)
+    {
+        this.textureFile = textureFile;
+    }
+}
+```
+
+Cria uma classe chamada `PNGTexture` cujo construtor aceita um nome de
+ficheiro, invocando o construtor da classe base com o nome de ficheiro
+concatenado com a _string_ ".png".
+
+> [Soluções](../solucoes/03_poo/38.md)
+
+---
+
+39 - Quais são os requisitos para que uma classe possa ser instanciada usando
+a sintaxe de inicialização de coleções?
+
+> [Soluções](../solucoes/03_poo/39.md)
+
+---
+
+40 - Quais são os requisitos para que uma instância de uma classe possa ser
+usada num `foreach` como fornecedor de itens?
+
+> [Soluções](../solucoes/03_poo/40.md)
+
+---
+<!--
+41 - Considera a seguinte classe:
+
+```cs
+public class Problem
+{
+    public static void Main()
+    {
+        // Um array de objetos de diferentes tipos
+        object[] stuff = { "ola", 1, 2.3, 5f, 12L, 4UL, 5U, "bye", 4, 9 };
+        // Imprimir apenas objetos do tipo inteiro
+        foreach (int i in Filter<object, int>(stuff))
+        {
+            Console.WriteLine("int = " + i);
+        }
+        // Imprimir apenas objetos do tipo float
+        foreach (float f in Filter<object, float>(stuff))
+        {
+            Console.WriteLine("float = " + f);
+        }
+    }
+}
+```
+
+Escreve e adiciona o método `Filter()` à classe `Problem` de modo a que o
+código no `Main()` faça sentido e funcione.
+
+> [Soluções](../solucoes/03_poo/41.md)
 -->
