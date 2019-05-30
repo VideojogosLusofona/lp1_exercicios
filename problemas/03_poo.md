@@ -720,8 +720,8 @@ public interface IBurnable
 ```
 
 Escreve um método chamado `GetPotentialEnergyOfBurnableItems()`, pertencente à
-classe `GameCharacter`, que devolve a energia potencial de todos os itens
-queimáveis transportados pelo jogador ou por um NPC.
+classe `GameCharacter`, que devolve a soma da energia potencial de todos os
+itens queimáveis transportados pelo jogador ou por um NPC.
 
 > [Soluções](../solucoes/03_poo/34.md)
 
