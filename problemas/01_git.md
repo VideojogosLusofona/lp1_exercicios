@@ -314,3 +314,57 @@ do mesmo, com seguimento remoto, para o ramo `devtests` do novo repositório.
 > [Soluções](../solucoes/01_git/34.md)
 
 ---
+
+35 - Antes de começares a usar Git LFS no teu PC e na tua conta de utilizador,
+que comando é necessário executar?
+
+> [Soluções](../solucoes/01/35.md)
+
+---
+
+36 - Iniciaste um novo projeto que vai incluir ficheiro binários `.mkv`, `.ogg`
+e `*.jpg`. Pretendes que estes tipos de ficheiros sejam incluidos no teu
+repositório Git em modo LFS. Quais os comandos a executar para o efeito? Onde
+fica registada esta informação?
+
+> [Soluções](../solucoes/01/36.md)
+
+---
+
+37 - No problema da alínea anterior decidiram mudar o formato dos ficheiros de
+vídeo de `.mkv` para `.mp4`. Que comandos tens de executar para deixar de
+seguir os ficheiros `.mkv` e começar a seguir os ficheiros `.mp4` em modo LFS?
+
+> [Soluções](../solucoes/01/37.md)
+
+---
+
+38 - Quando usas Git LFS num projeto com vários colegas, que cuidados todos os
+participantes têm de ter?
+
+> [Soluções](../solucoes/01/38.md)
+
+---
+
+39 - Quais as diferenças entre os comandos `git lfs status` e
+`git lfs ls-files`?
+
+> [Soluções](../solucoes/01/39.md)
+
+---
+
+40 - Começaste a usar o _XYZGameBuilder_ para criar a tua obra de arte. Este
+_game engine_ gera vários ficheiros temporários sem interesse com extensões
+`*.xyzconfig`, `*.xyzproj` e `*.xyzlocaldefs`. Além disso, o _game engine_
+guarda as definições do projeto, importantes para todos os que estão a
+desenvolver o jogo, em ficheiros binários com extensão `*.xyzsettings`.
+Adicionalmente pretendes usar _assets_ binários com extensões `*.png`, `*.psd`,
+`*.wav` e `*.3dx`. Responde às seguintes questões:
+
+1. Quais devem ser os conteúdos do ficheiro `.gitignore`?
+2. Quais devem ser os conteúdos do ficheiro `.gitattributes` e que comandos
+   usaste para gerar esses conteúdos?
+
+> [Soluções](../solucoes/01/40.md)
+
+---
