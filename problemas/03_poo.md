@@ -911,6 +911,487 @@ usada num `foreach` como fornecedor de itens?
 > [Soluções](../solucoes/03_poo/40.md)
 
 ---
+
+41 - Considera a seguinte classe:
+
+```cs
+public class Weapon
+{
+    public float AttackPower { get; }
+    public float Durability { get; }
+
+    public Weapon(float attackPower, float durability)
+    {
+        AttackPower = attackPower;
+        Durability = durability;
+    }
+}
+```
+
+Assume que temos uma lista de armas, ou seja, uma variável do tipo
+`List<Weapon>` e responde às seguintes questões:
+
+1. Faz as alterações necessárias à classe `Weapon` de modo a que quando
+invocarmos o método
+[`Sort`](https://docs.microsoft.com/dotnet/api/system.collections.generic.list-1.sort)
+(ou mais concretamente, o seu
+[_overload_ sem parâmetros](https://docs.microsoft.com/dotnet/api/system.collections.generic.list-1.sort#System_Collections_Generic_List_1_Sort)) da classe `List<T>`, as instâncias de `Weapon` fiquem ordenadas por
+`AttackPower` decrescente. _Sugestão:_ a classe `Weapon` tem de implementar
+[`IComparable<T>`](https://docs.microsoft.com/pt-pt/dotnet/api/system.icomparable-1).
+2. Cria uma classe `Program` com um método `Main()` para testar uma lista de
+várias instâncias de `Weapon`, nomeadamente a sua ordenação por `AttackPower`
+decrescente usando o método
+[`Sort()`](https://docs.microsoft.com/dotnet/api/system.collections.generic.list-1.sort#System_Collections_Generic_List_1_Sort)
+sem parâmetros.
+3. O método
+[`Sort`](https://docs.microsoft.com/dotnet/api/system.collections.generic.list-1.sort)
+da classe `List<T>` tem vários _overloads_. Um deles,
+[`Sort(IComparer<T>)`](https://docs.microsoft.com/dotnet/api/system.collections.generic.list-1.sort#System_Collections_Generic_List_1_Sort_System_Collections_Generic_IComparer__0__),
+permite ordenar a lista usando o critério de ordenação definido numa classe
+extra. Tal classe, como indicado na assinatura do método, tem de implementar a
+interface
+[`IComparer<T>`](https://docs.microsoft.com/dotnet/api/system.collections.generic.icomparer-1).
+Cria uma classe deste tipo cujo critério de ordenação seja `Durability`
+crescente.
+4. Adiciona ao método `Main()` da classe `Program` um teste à ordenação
+por `Durability` crescente usando o método
+[`Sort(IComparer<T>)`](https://docs.microsoft.com/dotnet/api/system.collections.generic.list-1.sort#System_Collections_Generic_List_1_Sort_System_Collections_Generic_IComparer__0__)
+e a classe desenvolvida no ponto anterior.
+
+> [Soluções](../solucoes/03_poo/42.md)
+
+---
+
+43 - Considera a seguinte classe:
+
+```cs
+public class SpaceFleet
+{
+    private Spaceship[] spaceships;
+
+    public SpaceFleet() { /* Código do construtor aqui */ }
+
+    public Spaceship GetSpaceship(int i)
+    {
+        if (i < spaceships.Length)
+            return spaceships[i];
+        else
+            return null;
+    }
+
+    public bool SetSpaceship(int i, Spaceship spaceship)
+    {
+        if (i < spaceships.Length && spaceships[i] == null)
+        {
+            spaceships[i] = spaceship;
+            return true;
+        }
+        return false;
+    }
+}
+
+```
+
+1. O tipo `Spaceship` é de referência (classe) ou de valor (`struct` ou
+   `enum`)? Porquê?
+2. A classe está a usar métodos _getter_ e _setter_. Não seria preferível usar
+   uma propriedade? Justifica a tua resposta.
+
+> [Soluções](../solucoes/03_poo/43.md)
+
+---
+
+44 - Considera a seguinte classe:
+
+```cs
+public class Enemy
+{
+    public static int NumberOfEnemies { get; private set; }
+    public int Health { get; set; }
+
+    public Enemy(int health)
+    {
+        NumberOfEnemies++;
+        Health = health;
+    }
+
+    public void Die()
+    {
+        NumberOfEnemies--;
+        Health = 0;
+    }
+}
+```
+
+Responde às seguintes questões:
+
+1. Considera que `monster` é uma instância de `Enemy`. Escreve duas linhas de
+   código, uma para imprimir no ecrã a propriedade `Health` da instância,
+   outra para imprimir a propriedade `NumberOfEnemies` da classe.
+2. Porque razão faz sentido a propriedade `NumberOfEnemies` ser `static`?
+3. De que parte do código pode ser alterado o valor da propriedade
+   `NumberOfEnemies`?
+
+> [Soluções](../solucoes/03_poo/44.md)
+
+---
+
+45 - Considera o seguinte código:
+
+```cs
+public class Power
+{
+    public string Description { get; set; }
+    public int Range { get; set; }
+}
+
+public class PlayerClass
+{
+    private int health;
+    private int shield;
+    private List<Power> powers;
+
+    public PlayerClass(int health, int shield)
+    {
+        this.health = health;
+        this.shield = shield;
+        powers = new List<Power>();
+    }
+
+    public void AddPower(Power p)
+    {
+        powers.Add(p);
+    }
+}
+
+public struct PlayerStruct
+{
+    private int health;
+    private int shield;
+    private List<Power> powers;
+
+    public PlayerStruct(int health, int shield)
+    {
+        this.health = health;
+        this.shield = shield;
+        powers = new List<Power>();
+    }
+
+    public void AddPower(Power p)
+    {
+        powers.Add(p);
+    }
+}
+```
+
+Pretende-se que os tipos `PlayerClass` e `PlayerStruct` implementem a interface
+[`ICloneable`](https://docs.microsoft.com/dotnet/api/system.icloneable), de
+modo a que uma chamada ao respetivo método
+[`IClone()`](https://docs.microsoft.com/dotnet/api/system.icloneable.clone)
+devolva uma cópia profunda da instância em questão. Uma cópia profunda consiste
+numa nova instância cujos campos têm o mesmo valor do objeto original. Se algum
+dos campos for um tipo de referência, a instância associada deve também ser
+clonada da mesma forma, e por ai fora. Reescreve o código dos tipos
+`PlayerClass` e `PlayerStruct` de modo a que implementem
+[`ICloneable`](https://docs.microsoft.com/dotnet/api/system.icloneable) segundo
+estas especificações.
+
+> [Soluções](../solucoes/03_poo/45.md)
+
+---
+
+46 - Considera a seguinte classe:
+
+```cs
+public abstract class GameItem
+{
+    public readonly string name;
+    public readonly string description;
+
+    public GameItem(string name, string description)
+    {
+        this.name = name;
+        this.description = description;
+    }
+}
+```
+
+Responde às seguintes questões:
+
+1. Implementa a classe `Sword` que estende `GameItem`, tendo adicionalmente
+   como estado os campos `length`, `typeOfMetal` e `condition`. O primeiro
+   pode ser representado com um número real, e os outros têm um tipo próprio,
+   `TypeOfMetal` e `WeaponCondition`, respetivamente. O construtor de `Sword`
+   aceita 5 parâmetros, que são usados para inicializar todos os campos da
+   classe. No entanto, os campos herdados de `GameItem` devem ser
+   inicializados pelo respetivo construtor.
+2. Cria as enumerações `TypeOfMetal` e `WeaponCondition` com valores à tua
+   escolha mas de modo a que façam sentido no contexto do problema.
+3. Dá um exemplo em código de como podemos criar uma instância de `Sword`.
+4. Normalmente as variáveis de instância têm visibilidade privada de modo a
+   não comprometer a encapsulação. No entanto não é esse o caso no código
+   apresentado. Porque razão a quebra de encapsulação não é tão grave neste
+   caso?
+5. Podemos instanciar diretamente `GameItem`? Porquê?
+
+> [Soluções](../solucoes/03_poo/46.md)
+
+---
+
+47 - Considera a seguinte interface:
+
+```cs
+public interface ILightSource
+{
+    double Illuminance { get; }
+}
+```
+
+Cria a classe `Star` que implementa as interfaces `ILightSource` e
+[`IComparable<T>`](https://docs.microsoft.com/dotnet/api/system.icomparable-1).
+A propriedade `Illuminance` da classe `Star` é obtida com a seguinte fórmula:
+
+_I = d \* A \* T<sup>4</sub>_
+
+na qual _d_ é a
+[constante de Stefan–Boltzmann](https://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_constant)
+(com um valor de 5.670 x 10<sup>−8</sup>), _A_ é a área de superfície da
+estrela e _T_ é a temperatura média da estrela. O construtor de `Star` aceita
+como parâmetros iniciais _A_ e _T_, que não mudam durante o tempo de vida da
+estrela.
+
+O critério de ordenação quando várias instâncias de `Star` são ordenadas segue
+a área de superfície (decrescente, da maior para a mais pequena), e em caso de
+estrelas com a mesma área, a temperatura serve como critério de desempate
+(também decrescente).
+
+> [Soluções](../solucoes/03_poo/47.md)
+
+---
+
+48 - A API do C# contém uma coleção especializada na manipulação de booleanos
+(zeros e uns). Faz uma pesquisa para descobrires que coleção é essa e realça
+algumas das suas principais funcionalidades, nomeadamente vantagens sobre o uso
+de um simples _array_ de booleanos.
+
+> [Soluções](../solucoes/03_poo/48.md)
+
+---
+
+49 - Dá três exemplos de coleções genéricas do C# que implementem
+[`ICollection<T>`](https://docs.microsoft.com/dotnet/api/system.collections.generic.icollection-1).
+Qual é ou quais são as funcionalidades que as coleções que implementam esta
+interface são obrigadas a ter?
+
+> [Soluções](../solucoes/03_poo/49.md)
+
+---
+
+50 - Considera as interfaces
+[`IList<T>`](https://docs.microsoft.com/dotnet/api/system.collections.generic.ilist-1)
+e
+[`IDictionary<TKey,TValue>`](https://docs.microsoft.com/dotnet/api/system.collections.generic.idictionary-2)
+.
+
+1. Para cada uma das interfaces, dá um exemplo de uma coleção do C# que a
+   implemente.
+2. Qual é ou quais são as funcionalidades que as coleções que implementam
+   estas interfaces são obrigadas a ter?
+
+> [Soluções](../solucoes/03_poo/50.md)
+
+---
+
+51 - Indica três coleções da API do C# que suportem sintaxe de inicialização de
+coleções e dá um exemplo de uso para cada uma delas.
+
+> [Soluções](../solucoes//03_poo/51.md)
+
+---
+
+52 -  Considera os tipos `MonsterType` e `Monster`, definidos pelo seguinte
+código:
+
+```cs
+enum MonsterType { Troll, Ogre, Elf, Demon }
+```
+
+```cs
+class Monster
+{
+    public const double MaxHealth = 100;
+    public const int MaxStrength = 200;
+    public MonsterType Type { get; set; }
+    public double Health { get; set; }
+    public int Strength { get; set; }
+}
+```
+
+Responde às seguintes questões:
+
+1. Existe algum campo `static` (de classe) na classe `Monster`?
+2. Adiciona o método iterável `CreateRandomMonsters()` à classe `Monster`, que
+   recebe um inteiro _n_ indicando quantos monstros devem ser criados, e que
+   devolve um `IEnumerable<Monster>` de _n_ monstros com campos inicializados
+   aleatoriamente (dentro dos limites especificados nos tipos).
+3. O método `CreateRandomMonsters()` deve ser `static`? Justifica a tua
+   resposta.
+4. Faz _override_ do método `ToString()` na classe `Monster` de modo a que o
+   mesmo devolva uma _string_ indicando, de forma bem formatada, as várias
+   propriedades do monstro. Por exemplo, a propriedade `Health` não deve ter
+   mais de duas casas decimais.
+5. Cria a classe `Program` com um método `Main` para testares a criação de 20
+   monstros aleatórios com o método `CreateRandomMonsters()`, imprimindo no
+   ecrã a _string_ devolvida pelo método `ToString()` para cada monstro.
+
+> [Soluções](../solucoes/03_poo/52.md)
+
+---
+
+53 - Escreve um programa que comece por solicitar ao utilizador dois conjuntos
+de números inteiros, _conjunto 1_ e _conjunto 2_. O programa deve depois
+apresentar os resultados das seguintes operações:
+
+1. **União** - Operação de união entre os dois conjuntos, ou seja, elementos
+   presentes no _conjunto 1_, no _conjunto 2_, e em ambos os conjuntos.
+2. **Interseção** - Operação de interseção entre os dois conjuntos, ou seja,
+   elementos simultaneamente presentes no _conjunto 1_ e no _conjunto 2_.
+3. **Diferença** -  Operação de diferença entre o  _conjunto 1_ e o _conjunto
+   2_, ou seja, elementos do _conjunto 1_ exceto aqueles que também existam no
+   _conjunto 2_.
+4. **Diferença simétrica** - Operação de diferença simétrica entre o _conjunto
+   1_ e o _conjunto 2_, ou seja, elementos que existam ou no _conjunto 1_ ou
+   no _conjunto 2_, mas não em ambos os conjuntos.
+5. **Subconjunto** - Se o _conjunto 1_ é um subconjunto do _conjunto 2_, ou
+   seja, se todos os elementos do _conjunto 1_ existem também no  _conjunto
+   2_.
+6. **Superconjunto** - Se o _conjunto 1_ é um superconjunto do _conjunto 2_,
+   ou seja, se o _conjunto 1_ contem todos os elementos do  _conjunto 2_.
+
+Os resultados das operações 1 a 4 devem aparecer de forma ordenada, e as
+operações devem ser independentes umas das outras, partindo sempre dos
+conjuntos 1 e 2 originais.
+
+Este problema deve ser resolvido com recurso direto às funcionalidades
+oferecidas pelas coleções do C#.
+
+> [Soluções](../solucoes/03_poo/53.md)
+
+---
+
+54 - Em alguns casos os dicionários podem ser usados para fins de
+[_caching_](https://en.wikipedia.org/wiki/Cache_%28computing%29), ou seja, para
+guardar resultados obtidos recentemente. Escreve um programa que leia a lista
+de jogos disponível [aqui](https://pastebin.com/raw/EuxZMbWT) para um _array_
+de _strings_, e que solicite ao utilizador (em ciclo infinito) uma frase, que
+será comparada com todos os jogos no _array_. Para existir um _match_, basta
+que uma _string_ que representa o nome de um jogo
+[contenha](https://docs.microsoft.com/dotnet/api/system.string.contains) a
+frase inserida pelo utilizador. A procura deve ser independente de maiúsculas e
+minúsculas. Após a procura, o programa deve indicar quantos jogos encontrou e
+quanto tempo demorou a fazer a procura. O seguinte código apresenta um
+_template_ da solução:
+
+```cs
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+
+        // Abrir ficheiro com nomes de jogos e colocar num array de strings
+        string[] games = File.ReadAllLines("videogames.txt");
+
+        // Ciclo de procuras, infinito
+        while (true)
+        {
+            // Cronómetro
+            Stopwatch stopwatch;
+            // String a procurar
+            string searchString;
+            // Resultados da procura, têm de ser enumeráveis e contáveis
+            ICollection<string> results;
+
+            // Solicitar string de procura, transformar em minúsculas para
+            // facilitar comparação mais à frente
+            Console.Write("Search for? ");
+            searchString = Console.ReadLine().ToLower();
+
+            // Começar contagem do tempo
+            stopwatch = Stopwatch.StartNew();
+
+            // Realizar procura aqui e colocar resultados na variável results,
+            // que provavelmente será uma lista. A procura deve:
+            // - Ignorar strings vazias ou que comecem com cardinal #
+            //   (que representa um comentário no ficheiro videogames.txt)
+            // - Ser independente de maiúsculas e minúsculas
+
+            // Parar o cronómetro
+            stopwatch.Stop();
+
+            // Mostrar resultados da procura
+            Console.WriteLine($"Time to find {results.Count} games was" +
+                $"{stopwatch.Elapsed}");
+
+            // Opcionalmente podemos mostrar alguns ou todos os jogos
+            // encontrados para fins de debugging
+        }
+    }
+}
+```
+
+Cada vez que é feita uma procura é necessário percorrer todo o _array_ de jogos
+novamente. No entanto a tua solução deve primeiro verificar se a procura já foi
+feita e existe em _cache_ (i.e., num dicionário criado para o efeito). Caso a
+procura exista em _cache_, serão devolvidos os resultados previamente
+guardados. Caso contrário é percorrido novamente todo o _array_ de jogos.
+Compara o tempo da procura no _array_ para novas procuras com o tempo de
+procura no dicionário para pesquisas previamente efetuadas.
+
+_Sugestão_: O dicionário deve ser do tipo `Dictionary<string,
+ICollection<string>>`, em que a chave representa a frase de procura e o valor
+representa os resultados dessa mesma procura.
+
+> [Soluções](../solucoes/03_poo/54.md)
+
+---
+
+55 - Considera o tipos `LootType` e `Loot`:
+
+```cs
+public enum LootType { Health, Ammo, Shield, Weapon, Collectible }
+```
+
+```cs
+public class Loot
+{
+    public LootType WhatKindOfLootAmI { get; set; }
+    public string Description { get; set; }
+    public ulong Value { get; set; }
+}
+```
+
+1. Faz _override_ dos métodos
+   [`GetHashCode()`](https://docs.microsoft.com/dotnet/api/system.object.gethashcode)
+   e [`Equals()`](https://docs.microsoft.com/dotnet/api/system.object.equals)
+   de modo a que um _loot_ seja considerado único no jogo se tiver o mesmo
+   tipo, nome e valor. _Sugestão_: Uma forma rápida de obter um _hash code_
+   para um dado tipo consiste em realizar a operação XOR no _hash code_ dos
+   seus diferentes campos.
+2. Testa a tua solução colocando vários objetos do tipo `Loot` num conjunto,
+   repetindo propositadamente os campos de duas instâncias diferentes.
+3. Se o tipo `Loot` fosse uma `struct` qual seria o comportamento por
+   omissão relativamente à igualdade de instâncias? Era necessário ter feito
+   os _overrides_ na primeira alínea do exercício?
+
+> [Soluções](../solucoes/03_poo/55.md)
+
+---
+
 <!--
 41 - Considera a seguinte classe:
 
