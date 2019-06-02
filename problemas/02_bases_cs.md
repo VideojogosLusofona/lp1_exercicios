@@ -415,6 +415,9 @@ Frase 3:
     Maior palavra: "ultima"
 ```
 
+**Nota**: o primeiro aluno a resolver este exercício receberá uma chave Steam
+para o [Deponia](https://store.steampowered.com/app/214340/Deponia/).
+
 > [Soluções](../solucoes/02_bases_cs/29.md)
 
 ---
