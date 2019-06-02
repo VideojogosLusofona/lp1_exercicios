@@ -810,10 +810,14 @@ Mars              mars.map           92.1 %     2257.178
 
 ---
 
-36 - Escreve um método `static` que inicialize e devolva uma
-[lista genérica](https://docs.microsoft.com/dotnet/api/system.collections.generic.list-1)
-contendo _n_ cópias de um valor passado como parâmetro e tipo especificado como
-argumento genérico.
+36 - Cria uma `struct` imutável, de nome `Duration`, que representa um
+intervalo de tempo, tendo as seguintes propriedades: `Seconds`, `Minutes`,
+`Hours`, `Days`, `Weeks` e `Years`. Cria também um programa para testar
+diferentes instâncias desta `struct`, e responde às seguintes questões:
+
+1. Quais são as vantagens desta `struct` ser imutável?
+2. Podemos usar a sintaxe de inicialização de objetos com propriedades para
+   inicializar instâncias desta `struct`? Porquê?
 
 > [Soluções](../solucoes/03_poo/36.md)
 
@@ -935,4 +939,44 @@ Escreve e adiciona o método `Filter()` à classe `Problem` de modo a que o
 código no `Main()` faça sentido e funcione.
 
 > [Soluções](../solucoes/03_poo/41.md)
+
+---
+
+36 - Escreve um método `static` que inicialize e devolva uma
+[lista genérica](https://docs.microsoft.com/dotnet/api/system.collections.generic.list-1)
+contendo _n_ cópias de um valor passado como parâmetro e tipo especificado como
+argumento genérico.
+
+> [Soluções](../solucoes/03_poo/36.md)
+
+---
+
+38 - Quais são os requisitos para que uma instância de uma classe possa ser
+usada num `foreach` como fornecedor de itens?
+
+> [Soluções](../solucoes/03_poo/38.md)
+
+---
+
+39 - Numa classe ou método genérico como podemos obrigar a que o tipo genérico
+tenha um construtor vazio?
+
+> [Soluções](../solucoes/03_poo/39.md)
+
+---
+
+40 - Numa classe ou método genérico como podemos obrigar a que o tipo genérico
+seja um tipo de referência?
+
+> [Soluções](../solucoes/03_poo/40.md)
+
+---
+
+41 - Numa classe ou método genérico como podemos inicializar o tipo genérico
+com o seu valor por omissão (equivalente a zero ou `null`)?
+
+> [Soluções](../solucoes/03_poo/41.md)
+
+---
+
 -->
