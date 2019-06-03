@@ -373,6 +373,7 @@ apenas quando o utilizador selecionar a opção 6.
 
 ---
 
+<a name="ex29"></a>
 29 - Escreve um programa que solicite ao utilizador um número de frases, e
 depois peça ao utilizador para inserir cada uma das frases individualmente.
 Cada frase deve ser dividida nas palavras que a compõem (removendo espaços e
@@ -383,7 +384,7 @@ _array_ de _strings_ indicar quantas palavras existem na respetiva frase, e
 qual a maior palavra.
 
 _Nota 1_: O método
-[Split()](https://docs.microsoft.com/pt-pt/dotnet/api/system.string.split#System_String_Split_System_Char___)
+[Split()](https://docs.microsoft.com/dotnet/api/system.string.split#System_String_Split_System_Char___)
 dos objectos do tipo `string` devolve _substrings_ da _string_ original
 separadas pelos caracteres passados ao método sob a forma de _array_ de
 `chars`. Por exemplo:
