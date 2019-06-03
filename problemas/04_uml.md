@@ -127,14 +127,14 @@ public abstract class NPC
    diferentes NPCs num jogo, com lógicas concretas e específicas para cada um
    deles. Os métodos `EatFood()` e `AttackEnemies()` podem consistir apenas de
    `Console.WriteLines`.
-2. Identifica a presença de polimorfismo na solução que apresentaste no ponto
-   anterior.
-3. Cria uma classe `Program` com um método `Main()` para testar as classes
+2. Cria uma classe `Program` com um método `Main()` para testar as classes
    criadas no ponto anterior. Por exemplo, criar uma ou mais instâncias de cada
    classe, colocar as mesmas numa coleção de `NPC`, percorrer a coleção, e
    invocar o método `PlayTurn()` em cada uma delas. Repara que, além do
    construtor, só o método `PlayTurn()` pode ser invocado a partir de outras
    classes.
+3. Identifica a presença de polimorfismo na solução que apresentaste no ponto
+   anterior.
 4. Desenha o diagrama UML da solução apresentada.
 
 > [Soluções](../solucoes/04_uml/08.md)
