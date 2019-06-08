@@ -262,18 +262,7 @@ variáveis intermédias, para guardar as coordenadas do vector.
 
 ---
 
-15 - Explica por palavras tuas o significado dos seguintes termos:
-
-* Classe
-* Objeto / instância
-* Método
-* Construtor
-* Variável de instância
-* Propriedade
-* Variável de suporte
-* Variável local
-* _Overloading_
-* Encapsulação
+15 - As enumerações, tipo `enum`, são tipos de referência ou valor?
 
 > [Soluções](../solucoes/03_poo/15.md)
 
