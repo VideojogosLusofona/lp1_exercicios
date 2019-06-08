@@ -1381,8 +1381,7 @@ public class Loot
 
 ---
 
-<!--
-41 - Considera a seguinte classe:
+56 - Considera a seguinte classe:
 
 ```cs
 public class Problem
@@ -1391,13 +1390,13 @@ public class Problem
     {
         // Um array de objetos de diferentes tipos
         object[] stuff = { "ola", 1, 2.3, 5f, 12L, 4UL, 5U, "bye", 4, 9 };
-        // Imprimir apenas objetos do tipo inteiro
-        foreach (int i in Filter<object, int>(stuff))
+        // Imprimir apenas objetos do tipo int
+        foreach (int i in Filter<int>(stuff))
         {
             Console.WriteLine("int = " + i);
         }
         // Imprimir apenas objetos do tipo float
-        foreach (float f in Filter<object, float>(stuff))
+        foreach (float f in Filter<float>(stuff))
         {
             Console.WriteLine("float = " + f);
         }
@@ -1408,44 +1407,515 @@ public class Problem
 Escreve e adiciona o método `Filter()` à classe `Problem` de modo a que o
 código no `Main()` faça sentido e funcione.
 
-> [Soluções](../solucoes/03_poo/41.md)
+> [Soluções](../solucoes/03_poo/56.md)
 
 ---
 
-36 - Escreve um método `static` que inicialize e devolva uma
+57 - Escreve um método `static` que inicialize e devolva uma
 [lista genérica](https://docs.microsoft.com/dotnet/api/system.collections.generic.list-1)
 contendo _n_ cópias de um valor passado como parâmetro e tipo especificado como
 argumento genérico.
 
-> [Soluções](../solucoes/03_poo/36.md)
+> [Soluções](../solucoes/03_poo/57.md)
 
 ---
 
-38 - Quais são os requisitos para que uma instância de uma classe possa ser
+58 - Quais são os requisitos para que uma instância de uma classe possa ser
 usada num `foreach` como fornecedor de itens?
 
-> [Soluções](../solucoes/03_poo/38.md)
+> [Soluções](../solucoes/03_poo/58.md)
 
 ---
 
-39 - Numa classe ou método genérico como podemos obrigar a que o tipo genérico
+59 - Numa classe ou método genérico como podemos obrigar a que o tipo genérico
 tenha um construtor vazio?
 
-> [Soluções](../solucoes/03_poo/39.md)
+> [Soluções](../solucoes/03_poo/59.md)
 
 ---
 
-40 - Numa classe ou método genérico como podemos obrigar a que o tipo genérico
+60 - Numa classe ou método genérico como podemos obrigar a que o tipo genérico
 seja um tipo de referência?
 
-> [Soluções](../solucoes/03_poo/40.md)
+> [Soluções](../solucoes/03_poo/60.md)
 
 ---
 
-41 - Numa classe ou método genérico como podemos inicializar o tipo genérico
+61 - Numa classe ou método genérico como podemos inicializar o tipo genérico
 com o seu valor por omissão (equivalente a zero ou `null`)?
 
-> [Soluções](../solucoes/03_poo/41.md)
+> [Soluções](../solucoes/03_poo/61.md)
+
+---
+
+62 - De modo a que o seguinte código passe a funcionar é necessário adicionar
+algumas linhas antes do mesmo. Quais são?
+
+```cs
+class Program
+{
+    public static void Main()
+    {
+        float number;
+        WriteLine("Escreve um número: ");
+        number = ToSingle(ReadLine());
+        WriteLine("O coseno desse número é {0:f3}", Cos(number));
+    }
+}
+```
+
+> [Soluções](../solucoes/03_poo/62.md)
+
+---
+
+63 - O método [`Next`](https://docs.microsoft.com/dotnet/api/system.random.next)
+da classe [`Random`](https://docs.microsoft.com/dotnet/api/system.random) tem
+vários _overloads_. Explica o que é um _overload_ e descreve as diferenças
+entre os vários _overloads_ do método indicado.
+
+> [Soluções](../solucoes/03_poo/63.md)
+
+---
+
+64 - Existe uma class `Random` tanto na API do C# como na API do Unity, que
+podem respetivamente ser importadas com os seguintes `using`:
+
+```cs
+using System;
+using UnityEngine;
+```
+
+Responde às seguintes questões:
+
+1. Como podemos diferenciar, no nosso código, entre o
+   [`Random`](https://docs.microsoft.com/dotnet/api/system.random) do C# e o
+   [`Random`](https://docs.unity3d.com/ScriptReference/Random.html) do Unity?
+2. Qual a principal diferença entre as duas classes, do ponto de vista de
+   instanciação e invocação dos métodos que produzem números aleatórios?
+
+> [Soluções](../solucoes/03_poo/64.md)
+
+---
+
+65 - Considera a classe `static`
+[`Input`](https://docs.unity3d.com/ScriptReference/Input.html) do Unity.
+Responde às seguintes questões:
+
+1. O que é necessário para que uma classe seja `static`?
+2. Porque razão faz sentido a classe
+   [`Input`](https://docs.unity3d.com/ScriptReference/Input.html) ser
+   `static`?
+3. O que é necessário fazer para usarmos os métodos e propriedades da classe
+   [`Input`](https://docs.unity3d.com/ScriptReference/Input.html) diretamente
+   no nosso código, por exemplo, escrevermos `GetButton()` em vez de
+   `Input.GetButton()`?
+4. Quais são os perigos de usar a abordagem indicada na pergunta anterior.
+5. Identifica mais duas classes `static` na
+   [API do Unity](https://docs.unity3d.com/ScriptReference/index.html).
+   Discute se faz sentido essas classes serem `static`.
+
+> [Soluções](../solucoes/03_poo/65.md)
+
+---
+
+66 - Considera o seguinte código, altamente abstrato:
+
+```cs
+public interface IFighter
+{
+    void Fight();
+}
+
+public abstract class DarkSideFighter : IFighter
+{
+    public abstract void Fight();
+}
+
+public abstract class GoodGuyFighter : IFighter
+{
+    public abstract void Fight();
+}
+
+public abstract class FighterFactory
+{
+    protected abstract DarkSideFighter CreateDarkSideFighter();
+    protected abstract GoodGuyFighter CreateGoodGuyFighter();
+}
+```
+
+1. Adiciona um método concreto à classe `FighterFactory` que não aceite
+   parâmetros e devolva uma instância de `DarkSideFighter` e outra de
+   `GoodGuyFighter`, devendo para o efeito invocar os respetivos métodos
+   `Create...Fighter()`.
+2. Desenha o diagrama UML de classes do código.
+3. Este código corresponde a um _design pattern_ muito comum. Faz uma pesquisa
+   e tenta descobrir qual.
+4. Considera que `myFighter` é um objeto cuja classe concreta (que
+   desconheces) implementa `IFighter`. Identifica o polimorfismo na seguinte
+   instrução: `myFighter.Fight();`.
+
+Neste exercício aceitam-se soluções separadas para cada uma das alíneas.
+
+> [Soluções](../solucoes/03_poo/66.md)
+
+---
+
+67 - Escreve um método `static` que inicialize e devolva um
+[enumerável genérico](https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1)
+contendo _n_ cópias de um valor passado como parâmetro e tipo especificado como
+argumento genérico.
+
+> [Soluções](../solucoes/03_poo/67.md)
+
+---
+
+68 - Cria a classe genérica `AwesomeList<T>` que estende
+[`List<T>`](https://docs.microsoft.com/dotnet/api/system.collections.generic.list-1)
+e faz `override` do método `ToString()` de modo que a devolva uma _string_ que
+indique o número de elementos na lista bem como o tipo desses elementos.
+
+_Nota:_ pode ser necessário recorrer ao operador
+[`typeof`](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/typeof)
+para obter o tipo de `T`.
+
+> [Soluções](../solucoes/03_poo/68.md)
+
+---
+
+69 - Considera a seguinte classe:
+
+```cs
+using System.Collections;
+using System.Collections.Generic;
+
+public class BasketballTeam : IEnumerable<string>
+{
+    public string Guard { get; set; }
+    public string ShootingGuard { get; set; }
+    public string SmallForward { get; set; }
+    public string PowerForward { get; set; }
+    public string Center { get; set; }
+
+    public IEnumerator<string> GetEnumerator()
+    {
+        yield return Guard;
+        yield return ShootingGuard;
+        yield return SmallForward;
+        yield return PowerForward;
+        yield return Center;
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
+    }
+}
+```
+
+1. Cria uma classe `Program` com um método `Main` para testar a classe
+   apresentada. Mais concretamente, no método `Main` deves: a) criar uma
+   instância de `BasketballTeam` usando a
+   [sintaxe de inicialização de objectos com propriedades](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/object-and-collection-initializers);
+   e, b) imprimir no ecrã o nome de todos os elementos da equipa usando o
+   facto da classe `BasketballTeam` ser iterável.
+2. Supõe que o C# não tem a declaração `yield return`. Reescreve o método
+   `GetEnumerator` tendo em conta essa limitação.
+3. Quais são as vantagens óbvias do uso de `yield return` relativamente à
+   forma como reescreveste o código na alínea anterior?
+
+> [Soluções](../solucoes/03_poo/69.md)
+
+---
+
+<!--
+
+1 - Escreve um método `static` que troque o valor de duas variáveis de entrada
+cujo tipo é definido em tempo de execução (ou seja, por quem invoca o método).
+
+> [Soluções](../solucoes/03_poo/01.md)
+
+---
+
+2 - Cria uma classe `IntList` que estende `List<int>`, adicionando três versões
+de um método que retorne o valor mínimo (`int`), o valor máximo (`int`) e o
+valor médio (`float`) referentes aos inteiros contidos na lista. Cada versão do
+método deve retornar estes valores de forma diferente: 1) usando parâmetros de
+saída (`out`); 2) usando uma classe/_struct_ específica; e, 3) usando tuplos. A
+segunda forma pressupõe a criação de uma classe ou _struct_ extra; neste caso
+podem criar uma classe/_struct_ interna, ou seja, dentro da classe `IntList`.
+Sobrepõe ainda o método `ToString()` de modo a que a _string_ devolvida indique
+quantos elementos tem a lista, bem como os valores mínimo, máximo e médio
+contidos na mesma.
+
+> [Soluções](../solucoes/03_poo/02.md)
+
+---
+
+3 - Cria uma classe chamada `HighScoreManager`, que contém internamente uma
+coleção com um máximo de 10 `Tuple<string, float>`, cada um representando o
+nome de um jogador e o respetivo _score_. Além da coleção referida, a classe
+deve ainda conter:
+
+* Um construtor, que aceita opcionalmente um nome de ficheiro (deve existir
+  um nome por omissão), e:
+  * Caso o ficheiro não exista, inicializa a coleção sem elementos.
+  * Caso o ficheiro exista, abre-o e inicializa a coleção de modo a que
+    contenha os nomes e _scores_ especificados no ficheiro.
+  * Caso o ficheiro exista, mas tenha um formato inválido, lançar uma excepção
+    do tipo `InvalidOperationException`.
+* Um método `AddScore(string name, float score)`, que adiciona um novo
+  `Tuple<string, float>` à coleção. Se o número de _scores_ ultrapassar 10, o
+  tuplo contendo o menor _score_ deve ser removido.
+* Um método `Save()`, que guarda os _scores_ no ficheiro especificado no
+  construtor.
+* Um método `ToString()`, que devolve uma _string_ contendo uma tabela
+  devidamente formatada com todos os nomes e _scores_, do mais alto ao mais
+  baixo.
+* Um método iterável `GetScores()` que retorna de forma ordenada (do _score_
+  mais alto até ao _score_ mais baixo) todos tuplos guardados na coleção.
+
+O formato do ficheiro de _high scores_ fica ao critério dos alunos.
+
+Cria também uma classe `Program` com um método `Main` para testar os vários
+métodos da classe `HighScoreManager`.
+
+> [Soluções](../solucoes/03_poo/03.md)
+
+---
+
+
+5 - Cria uma classe, com **um único** método estático `Main()`, que solicita ao
+utilizador um número inteiro positivo e apresenta o respetivo número da
+[sequência de Lucas](https://en.wikipedia.org/wiki/Lucas_number). O número
+deve ser calculado de forma recursiva com uma ou mais **funções locais**.
+
+> [Soluções](../solucoes/03_poo/05.md)
+
+---
+
+6 - Considera o seguinte método:
+
+```cs
+public void AwesomeMethod(float a, float b, int c = 2, string d = "hi!")
+{
+    Console.WriteLine($"{a} {b} {c} {d}");
+}
+```
+
+1. Quais os parâmetros obrigatórios?
+2. Quais os parâmetros opcionais?
+3. Qual o valor de `a`, `b`, `c` e `d` se método for invocado da seguinte
+forma: `AwesomeMethod(-1.0f, 0.0f, d: "bye!")`?
+4. Qual o valor de `a`, `b`, `c` e `d` se método for invocado da seguinte
+forma: `AwesomeMethod(50, -10, 14)`?
+5. Qual o valor de `a`, `b`, `c` e `d` se método for invocado da seguinte
+forma: `AwesomeMethod(c: 100, b: 123f, d: "yeah!", a: 0)`?
+5. Qual o valor de `a`, `b`, `c` e `d` se método for invocado da seguinte
+forma: `AwesomeMethod(b: 1, a: 2)`?
+
+> [Soluções](../solucoes/03_poo/06.md)
+
+---
+
+7 - Cria uma classe estática chamada `Stats` com vários métodos utilitários
+para determinar estatísticas simples. Cada um destes métodos deve aceitar um
+número variável de _doubles_ e retornar o valor estatístico que lhe compete.
+Devem existir métodos para a retornar a média, mediana, moda, máximo e mínimo.
+
+Cria também uma classe `Program` com um método `Main()` para testar os vários
+métodos da classe `Stats`.
+
+> [Soluções](../solucoes/03_poo/07.md)
+
+---
+
+8 - Adiciona dois método à classe criada no exercício anterior:
+
+1. O primeiro retorna todas as estatísticas de um número variável de _doubles_
+   (média, mediana, moda, máximo e mínimo) num tuplo.
+2. O segundo retorna todas as estatísticas de um número variável de _doubles_
+   (média, mediana, moda, máximo e mínimo) em parâmetros `out`.
+
+Ambos os métodos devem fazer uso dos métodos já existentes para cálculo das
+estatísticas.
+
+Atualiza o método `Main()` da classe `Program` para testar os dois métodos
+novos.
+
+> [Soluções](../solucoes/03_poo/08.md)
+
+---
+
+9 - Responde às seguintes questões:
+
+1. Nos métodos, os parâmetros opcionais têm de aparecer a seguir a todos
+   os parâmetros obrigatórios?
+2. Num método, um parâmetro com a _keyword_ `params` tem de ser o último?
+3. Dado o método
+   `void AwesomeMethod(float x, int y = 2, params double[] z) {...}`, quais das
+   seguintes instruções são válidas? Em caso afirmativo, quais os conteúdos de
+   `x`, `y` e `z`?
+
+
+* `AwesomeMethod(a: 2.1f, 3, 12, 23f, 34.5, -123.0);`
+* `AwesomeMethod(1.7f);`
+* `AwesomeMethod();`
+* `AwesomeMethod(0.01f, z: new double[] { 2.3, 4, -4f });`
+* `AwesomeMethod(0, 2.3f, 2, 3, 4, 5);`
+* `AwesomeMethod(-1.9f, 2, 3.0, 4.0, 5.0, 6.0, 19, -1, 4);`
+
+
+> [Soluções](../solucoes/03_poo/09.md)
+
+---
+
+10 - Quais as vantagens e desvantagens do uso de `out` e `ref` na passagem de
+parâmetros para métodos?
+
+> [Soluções](../solucoes/03_poo/10.md)
+
+---
+
+11 - Qual a diferença entre `out` e `ref` na passagem de parâmetros para
+métodos?
+
+> [Soluções](../solucoes/03_poo/11.md)
+
+---
+
+12 - Responde Sim/Não às seguintes questões:
+
+1. Um parâmetro `out` indica que foi passada uma referência para a própria
+variável em vez de uma cópia da mesma?
+2. Um parâmetro `ref` indica que foi passada uma referência para a própria
+variável em vez de uma cópia da mesma?
+3. Os parâmetros `out` têm de ser inicializados dentro do método?
+4. Os parâmetros `ref` têm de ser inicializados dentro do método?
+
+> [Soluções](../solucoes/03_poo/12.md)
+
+---
+
+13 - Escreve um programa que aceita _strings_ escritas pelo utilizador em
+_loop_, gravando as mesmas convertidas em maiúsculas num ficheiro especificado
+como argumento da linha de comandos. O programa termina quando o utilizador
+insere uma _string_ vazia (isto é, simplesmente pressiona ENTER sem escrever
+nada).
+
+_Sugestão_: confere o método [ToUpper()](https://docs.microsoft.com/dotnet/api/system.string.toupper)
+da classe [string](https://docs.microsoft.com/dotnet/api/system.string).
+
+> [Soluções](../solucoes/03_poo/13.md)
+
+---
+
+14 - Escreve um programa que aceita _strings_ escritas pelo utilizador em
+_loop_ e tenta converte-las em `byte`. Em caso de sucesso mostra uma mensagem
+apropriada contendo o valor convertido. Em caso de falhanço, mostra uma
+mensagem com indicação desse facto. O programa termina quando o utilizador
+insere uma _string_ vazia (isto é, simplesmente pressiona ENTER sem escrever
+nada).
+
+> [Soluções](../solucoes/03_poo/14.md)
+
+---
+
+16 - Considera o seguinte programa:
+
+```cs
+using System;
+
+public class NPC
+{
+    public float HP { get; private set; }
+
+    public NPC(float hp) { HP = hp; }
+
+    public void TakeHit(float damage)
+    {
+        HP -= damage;
+        if (HP < 0) HP = 0;
+    }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        NPC[] npcs = new NPC[]
+        {
+            new NPC(12.5f),
+            new NPC(19.5f)
+        };
+
+        NPC npc1 = npcs[0];
+        npc1.TakeHit(5f);
+
+        foreach(NPC npc in npcs)
+        {
+            Console.WriteLine($"HP={npc.HP}");
+        }
+    }
+}
+```
+
+Responde às seguintes questões:
+
+1. O que é impresso pelo programa? Descreve sucintamente o que acontece no
+`Main()`.
+2. Se a classe `NPC` passar a ser uma `struct`, o que é impresso pelo programa?
+Porquê?
+3. Que alteração temos de fazer no `Main()` (à parte de manipular o NPC
+diretamente no _array_), para podermos alterar o valor do HP do NPC, sendo este
+uma `struct`?
+
+> [Soluções](../solucoes/03_poo/16.md)
+
+---
+
+
+30 - Escreve o código de um método genérico que instancie e devolva um _array_
+de objetos do tipo genérico `T`. O tamanho do _array_ e o valor inicial de
+todos os elementos do _array_ devem ser passados como argumentos opcionais
+do método, cujos valores por omissão são 10 e `default(T)`, respetivamente.
+Mostra 5 formas diferentes de usar o método (com tipos diferentes,
+especificando ou não todos os parâmetros, indicando o nome dos parâmetros,
+trocando a ordem dos mesmos, etc).
+
+> [Soluções](../solucoes/02/030.md)
+
+---
+
+31 - A classe [`Array`](https://docs.microsoft.com/dotnet/api/system.array) tem
+vários métodos utilitários `static`. Um deles tem uma série de _overloads_ que
+fazem algo similar ao especificado no exercício anterior. Descobre qual é o
+nome deste método e utiliza um dos seus _overloads_ para instanciar uma matriz
+(i.e., um _array_ bidimensional) de 50 x 50 booleanos.
+
+> [Soluções](../solucoes/02/031.md)
+
+---
+
+32 - Escreve um método chamado `Saturate()` que recebe dois inteiros e devolve
+um booleano. O primeiro inteiro deve ser positivo e define um limite inferior e
+superior dentro do qual o segundo inteiro deve estar. Caso o segundo inteiro
+esteja dentro dos limites, o método simplesmente retorna `false`. Caso
+contrário o método modifica o segundo inteiro, colocando-o dentro dos limites,
+devolvendo `true`. A modificação do segundo inteiro deve ser visível fora do
+método. Alguns exemplos:
+
+|1º `int`|2º `int` (original)|2º `int` (talvez modificado)|Valor de retorno|
+|-------:|------------------:|---------------------------:|----------------|
+|10|23|10|`true`|
+|15|-20|-15|`true`|
+|5|-3|-3|`false`|
+|25|-22|-22|`false`|
+|12|15|12|`true`|
+
+Testa o método `Saturate()` com diferentes valores de modo a verificares o seu
+correto funcionamento. Faz sentido este método ser `static`? Porquê?
+
+> [Soluções](../solucoes/02/032.md)
 
 ---
 
