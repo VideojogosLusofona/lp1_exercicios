@@ -1627,16 +1627,14 @@ public class BasketballTeam : IEnumerable<string>
 
 ---
 
-<!--
-
-1 - Escreve um método `static` que troque o valor de duas variáveis de entrada
+70 - Escreve um método `static` que troque o valor de duas variáveis de entrada
 cujo tipo é definido em tempo de execução (ou seja, por quem invoca o método).
 
-> [Soluções](../solucoes/03_poo/01.md)
+> [Soluções](../solucoes/03_poo/70.md)
 
 ---
 
-2 - Cria uma classe `IntList` que estende `List<int>`, adicionando três versões
+71 - Cria uma classe `IntList` que estende `List<int>`, adicionando três versões
 de um método que retorne o valor mínimo (`int`), o valor máximo (`int`) e o
 valor médio (`float`) referentes aos inteiros contidos na lista. Cada versão do
 método deve retornar estes valores de forma diferente: 1) usando parâmetros de
@@ -1647,11 +1645,11 @@ Sobrepõe ainda o método `ToString()` de modo a que a _string_ devolvida indiqu
 quantos elementos tem a lista, bem como os valores mínimo, máximo e médio
 contidos na mesma.
 
-> [Soluções](../solucoes/03_poo/02.md)
+> [Soluções](../solucoes/03_poo/71.md)
 
 ---
 
-3 - Cria uma classe chamada `HighScoreManager`, que contém internamente uma
+72 - Cria uma classe chamada `HighScoreManager`, que contém internamente uma
 coleção com um máximo de 10 `Tuple<string, float>`, cada um representando o
 nome de um jogador e o respetivo _score_. Além da coleção referida, a classe
 deve ainda conter:
@@ -1679,21 +1677,20 @@ O formato do ficheiro de _high scores_ fica ao critério dos alunos.
 Cria também uma classe `Program` com um método `Main` para testar os vários
 métodos da classe `HighScoreManager`.
 
-> [Soluções](../solucoes/03_poo/03.md)
+> [Soluções](../solucoes/03_poo/72.md)
 
 ---
 
-
-5 - Cria uma classe, com **um único** método estático `Main()`, que solicita ao
-utilizador um número inteiro positivo e apresenta o respetivo número da
+73 - Cria uma classe, com **um único** método estático `Main()`, que solicita
+ao utilizador um número inteiro positivo e apresenta o respetivo número da
 [sequência de Lucas](https://en.wikipedia.org/wiki/Lucas_number). O número
 deve ser calculado de forma recursiva com uma ou mais **funções locais**.
 
-> [Soluções](../solucoes/03_poo/05.md)
+> [Soluções](../solucoes/03_poo/73.md)
 
 ---
 
-6 - Considera o seguinte método:
+74 - Considera o seguinte método:
 
 ```cs
 public void AwesomeMethod(float a, float b, int c = 2, string d = "hi!")
@@ -1713,11 +1710,11 @@ forma: `AwesomeMethod(c: 100, b: 123f, d: "yeah!", a: 0)`?
 5. Qual o valor de `a`, `b`, `c` e `d` se método for invocado da seguinte
 forma: `AwesomeMethod(b: 1, a: 2)`?
 
-> [Soluções](../solucoes/03_poo/06.md)
+> [Soluções](../solucoes/03_poo/74.md)
 
 ---
 
-7 - Cria uma classe estática chamada `Stats` com vários métodos utilitários
+75 - Cria uma classe estática chamada `Stats` com vários métodos utilitários
 para determinar estatísticas simples. Cada um destes métodos deve aceitar um
 número variável de _doubles_ e retornar o valor estatístico que lhe compete.
 Devem existir métodos para a retornar a média, mediana, moda, máximo e mínimo.
@@ -1725,11 +1722,11 @@ Devem existir métodos para a retornar a média, mediana, moda, máximo e mínim
 Cria também uma classe `Program` com um método `Main()` para testar os vários
 métodos da classe `Stats`.
 
-> [Soluções](../solucoes/03_poo/07.md)
+> [Soluções](../solucoes/03_poo/75.md)
 
 ---
 
-8 - Adiciona dois método à classe criada no exercício anterior:
+76 - Adiciona dois método à classe criada no exercício anterior:
 
 1. O primeiro retorna todas as estatísticas de um número variável de _doubles_
    (média, mediana, moda, máximo e mínimo) num tuplo.
@@ -1742,11 +1739,11 @@ estatísticas.
 Atualiza o método `Main()` da classe `Program` para testar os dois métodos
 novos.
 
-> [Soluções](../solucoes/03_poo/08.md)
+> [Soluções](../solucoes/03_poo/76.md)
 
 ---
 
-9 - Responde às seguintes questões:
+77 - Responde às seguintes questões:
 
 1. Nos métodos, os parâmetros opcionais têm de aparecer a seguir a todos
    os parâmetros obrigatórios?
@@ -1756,7 +1753,6 @@ novos.
    seguintes instruções são válidas? Em caso afirmativo, quais os conteúdos de
    `x`, `y` e `z`?
 
-
 * `AwesomeMethod(a: 2.1f, 3, 12, 23f, 34.5, -123.0);`
 * `AwesomeMethod(1.7f);`
 * `AwesomeMethod();`
@@ -1764,26 +1760,25 @@ novos.
 * `AwesomeMethod(0, 2.3f, 2, 3, 4, 5);`
 * `AwesomeMethod(-1.9f, 2, 3.0, 4.0, 5.0, 6.0, 19, -1, 4);`
 
-
-> [Soluções](../solucoes/03_poo/09.md)
+> [Soluções](../solucoes/03_poo/77.md)
 
 ---
 
-10 - Quais as vantagens e desvantagens do uso de `out` e `ref` na passagem de
+78 - Quais as vantagens e desvantagens do uso de `out` e `ref` na passagem de
 parâmetros para métodos?
 
-> [Soluções](../solucoes/03_poo/10.md)
+> [Soluções](../solucoes/03_poo/78.md)
 
 ---
 
-11 - Qual a diferença entre `out` e `ref` na passagem de parâmetros para
+79 - Qual a diferença entre `out` e `ref` na passagem de parâmetros para
 métodos?
 
-> [Soluções](../solucoes/03_poo/11.md)
+> [Soluções](../solucoes/03_poo/79.md)
 
 ---
 
-12 - Responde Sim/Não às seguintes questões:
+80 - Responde Sim/Não às seguintes questões:
 
 1. Um parâmetro `out` indica que foi passada uma referência para a própria
 variável em vez de uma cópia da mesma?
@@ -1792,11 +1787,11 @@ variável em vez de uma cópia da mesma?
 3. Os parâmetros `out` têm de ser inicializados dentro do método?
 4. Os parâmetros `ref` têm de ser inicializados dentro do método?
 
-> [Soluções](../solucoes/03_poo/12.md)
+> [Soluções](../solucoes/03_poo/80.md)
 
 ---
 
-13 - Escreve um programa que aceita _strings_ escritas pelo utilizador em
+81 - Escreve um programa que aceita _strings_ escritas pelo utilizador em
 _loop_, gravando as mesmas convertidas em maiúsculas num ficheiro especificado
 como argumento da linha de comandos. O programa termina quando o utilizador
 insere uma _string_ vazia (isto é, simplesmente pressiona ENTER sem escrever
@@ -1805,22 +1800,22 @@ nada).
 _Sugestão_: confere o método [ToUpper()](https://docs.microsoft.com/dotnet/api/system.string.toupper)
 da classe [string](https://docs.microsoft.com/dotnet/api/system.string).
 
-> [Soluções](../solucoes/03_poo/13.md)
+> [Soluções](../solucoes/03_poo/81.md)
 
 ---
 
-14 - Escreve um programa que aceita _strings_ escritas pelo utilizador em
+82 - Escreve um programa que aceita _strings_ escritas pelo utilizador em
 _loop_ e tenta converte-las em `byte`. Em caso de sucesso mostra uma mensagem
 apropriada contendo o valor convertido. Em caso de falhanço, mostra uma
 mensagem com indicação desse facto. O programa termina quando o utilizador
 insere uma _string_ vazia (isto é, simplesmente pressiona ENTER sem escrever
 nada).
 
-> [Soluções](../solucoes/03_poo/14.md)
+> [Soluções](../solucoes/03_poo/82.md)
 
 ---
 
-16 - Considera o seguinte programa:
+83 - Considera o seguinte programa:
 
 ```cs
 using System;
@@ -1869,12 +1864,11 @@ Porquê?
 diretamente no _array_), para podermos alterar o valor do HP do NPC, sendo este
 uma `struct`?
 
-> [Soluções](../solucoes/03_poo/16.md)
+> [Soluções](../solucoes/03_poo/83.md)
 
 ---
 
-
-30 - Escreve o código de um método genérico que instancie e devolva um _array_
+84 - Escreve o código de um método genérico que instancie e devolva um _array_
 de objetos do tipo genérico `T`. O tamanho do _array_ e o valor inicial de
 todos os elementos do _array_ devem ser passados como argumentos opcionais
 do método, cujos valores por omissão são 10 e `default(T)`, respetivamente.
@@ -1882,21 +1876,21 @@ Mostra 5 formas diferentes de usar o método (com tipos diferentes,
 especificando ou não todos os parâmetros, indicando o nome dos parâmetros,
 trocando a ordem dos mesmos, etc).
 
-> [Soluções](../solucoes/02/030.md)
+> [Soluções](../solucoes/03_poo/84.md)
 
 ---
 
-31 - A classe [`Array`](https://docs.microsoft.com/dotnet/api/system.array) tem
+85 - A classe [`Array`](https://docs.microsoft.com/dotnet/api/system.array) tem
 vários métodos utilitários `static`. Um deles tem uma série de _overloads_ que
 fazem algo similar ao especificado no exercício anterior. Descobre qual é o
 nome deste método e utiliza um dos seus _overloads_ para instanciar uma matriz
 (i.e., um _array_ bidimensional) de 50 x 50 booleanos.
 
-> [Soluções](../solucoes/02/031.md)
+> [Soluções](../solucoes/03_poo/85.md)
 
 ---
 
-32 - Escreve um método chamado `Saturate()` que recebe dois inteiros e devolve
+86 - Escreve um método chamado `Saturate()` que recebe dois inteiros e devolve
 um booleano. O primeiro inteiro deve ser positivo e define um limite inferior e
 superior dentro do qual o segundo inteiro deve estar. Caso o segundo inteiro
 esteja dentro dos limites, o método simplesmente retorna `false`. Caso
@@ -1915,8 +1909,6 @@ método. Alguns exemplos:
 Testa o método `Saturate()` com diferentes valores de modo a verificares o seu
 correto funcionamento. Faz sentido este método ser `static`? Porquê?
 
-> [Soluções](../solucoes/02/032.md)
+> [Soluções](../solucoes/03_poo/86.md)
 
 ---
-
--->
