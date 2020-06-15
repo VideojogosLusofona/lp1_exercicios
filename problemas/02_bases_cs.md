@@ -254,7 +254,7 @@ resultado e terminar a execução. Se não forem indicados três argumentos, ou 
 a operação não for conhecida, o programa deve terminar com uma mensagem de erro
 apropriada.
 
-Exemplo de execução: `dotnet run + 3.2 5`, que deverá mostrar `8.2`.
+Exemplo de execução: `dotnet run -- + 3.2 5`, que deverá mostrar `8.2`.
 
 > [Soluções](../solucoes/02_bases_cs/23.md)
 
