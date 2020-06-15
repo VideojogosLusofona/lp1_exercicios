@@ -947,7 +947,7 @@ por `Durability` crescente usando o método
 [`Sort(IComparer<T>)`](https://docs.microsoft.com/dotnet/api/system.collections.generic.list-1.sort#System_Collections_Generic_List_1_Sort_System_Collections_Generic_IComparer__0__)
 e a classe desenvolvida no ponto anterior.
 
-> [Soluções](../solucoes/03_poo/42.md)
+> [Soluções](../solucoes/03_poo/41.md)
 
 ---
 
