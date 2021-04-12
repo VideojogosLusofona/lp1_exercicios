@@ -960,3 +960,31 @@ void MisteryOp(ref char[] a)
 > [Soluções](../solucoes/02_bases_cs/57.md)
 
 ---
+
+58 - Recebeste uma tarefa para implementar uma função que deteta as classes de um jogo MMORPG que irá ser utilizado para o sistema de “Party Search”. Este MMO tem cerca de 6 classes que incluí: Fighter, Cleric, Druid, Barbarian, Rogue e Wizard. No entanto é preciso ter em conta que este jogo permite ao jogador fazer “multi-class”, ou seja, pode criar personagens que tenham até 3 classes distintas num só personagem (e.g. Druid; Figher + Rogue; ou Cleric + Barbarian + Wizard). 
+A tua tarefa é implementar o sistema mais eficiente para detetar a classe (ou classes) do personagem do jogador usando exclusivamente operações de bitwise.
+
+You received a task to implement a function capable of detecting classes from an MMORPG hame which will be used for the new "Party Search" Function. This MMO has about 6 classes which includes: Fighter, Cleric, Druid, Barbarian, Rogue and Wizard. However, this game allows players to use a "multi-class" system of up to 3 classes, meaning that players can mix and match of a total of 3 classes (e.g. Druid; Figher + Rogue; ou Cleric + Barbarian + Wizard).
+Your task is to implement an efficient system capable of detecting a class (or classes) of a character using exclusively bitwise operations. 
+
+```cs
+const int Fighter = 1;
+const int Cleric = 2;
+const int Druid = 4;
+const int Barbarian = 8;
+const int Rogue = 16;
+const int Wizard = 32;
+
+public static void CheckClass() // Implement
+
+public static int ReturnRandomClass() // Implement
+
+```
+
+Output Example:
+
+."-Fighter-"
+."-Clearic--Druid--"
+."-Cleric--Barbarian--Wizard-"
+
+---
