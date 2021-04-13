@@ -982,9 +982,76 @@ public static int ReturnRandomClass() // Implement
 ```
 
 Output Example:
+"-Fighter-"
+"-Clearic--Druid--"
+"-Cleric--Barbarian--Wizard-"
 
-."-Fighter-"
-."-Clearic--Druid--"
-."-Cleric--Barbarian--Wizard-"
+---
+
+59 - Implementa uma função que recebe como input uma String e um número, e que repete essa String o número de vezes inserido.
+
+Implement a function that receives as input a String and a Number. This function should return the same String repeated by the inputted number.
+
+Output Example:
+Input: “Banana”, 3 => “BananaBananaBanana”
+Input: “Jar”, 1 => “JarJar”
+Input: “Welcome”, 0 => “Welcome”
+
+---
+
+60 - Um Anagrama consiste em reorganizar as letras de uma palavra para dar origem a outra nova palavra. Implementa uma função que recebe duas strings como input e verifica se uma palavra é anagrama da outra – return true (se é anagrama) ou return false (se não é).
+
+An Anagram consists of a word whose letters can be reorganized into a new word. Implement a function that takes two strings as an input and verifies if a word is an anagram of another - return true if it is, return false if it is not. 
+
+
+Output Example:
+Input: “Taste” “State” => TRUE
+Input: “Dog” “God” => TRUE
+Input: “Frog” “Rock” => FALSE
+
+---
+
+61 - Implementa uma função que deteta as vogais de uma string e que retorna um array de inteiros cujo contenha a posição de cada vogal dessa palavra. A contagem deve começar do 1 e não do 0. 
+
+Implement a function that detects the vowels of a string and returns an integer array containing the position of each vowel of the inputted string. Counting should start from 1 and not 0.
+
+
+Output Example:
+Input: “Hello” => Output: [2, 5]
+Input: “World” => Output: [2]
+Input: “Everyday” => Output: [1, 3, 7]
+
+---
+
+62 - Implementa uma função que recebe um número e retorna a soma de cada dígito desse número.
+
+Implement a function that receives a number and returns the sum of each digit of that number.
+
+Output Example:
+Input: 12 => (1 + 2) Output: 3
+Input: 345 => (3 + 4 + 5) Output: 12
+Input: 123456 => (1 + 2 + 3 + 4 + 5 + 6) Output: 21
+
+---
+
+63 - Implementa uma função que recebe como input um array (tipo <string>), um inteiro e uma string. A função deverá retornar um array com a nova string inserido na posição do inteiro. Nota: Implemente esta função de raíz.
+
+Implement a function that takes as input an array (type <string>), an integer and a string. The function should return an array with the new string inserted in the position of the integer. Note: Implement this function from scratch.
+
+
+Output Example:
+Input: [“abc”, “aaa”, “ccc”], 2, “bbb” => Output: [“abc”, “aaa”, “bbb”, “ccc”]
+Input: [“0001”, “0010”, “0011”], 0 “0000” => Ouput: [“0000”, “0001”, “0010”, “0011”]
+
+---
+
+64 - Implementa uma função que receba uma string e faça a sua inversão para cada palavra dessa string
+
+Implement a function that receives a string and inverts every word of that string.
+
+Output Example:
+Input: “Hello World!” => “olleH !dlroW”
+Input: “Foo Bar” => “ooF raB”
+Input: “Cool Beans” => “looC snaeB”
 
 ---
