@@ -1021,9 +1021,9 @@ return the same String repeated by the inputted number.
 
 Output Example:
 
-* Input: `Banana`, `3` => Output: `BananaBananaBanana`
-* Input: `Jar`, `1` => Output: `JarJar`
-* Input: `Welcome`, `0` => `Welcome`
+* Input: `"Banana"`, `3` => Output: `"BananaBananaBanana"`
+* Input: `"Jar"`, `1` => Output: `"JarJar"`
+* Input: `"Welcome"`, `0` => `"Welcome"`
 
 ---
 
@@ -1036,9 +1036,9 @@ takes two strings as an input and verifies if a word is an anagram of another.
 
 Output Example:
 
-* Input: `Taste` `State` => Output: `TRUE`
-* Input: `Dog` `God` => Output: `TRUE`
-* Input: `Frog` `Rock` => Output: `FALSE`
+* Input: `"Taste"` `"State"` => Output: `TRUE`
+* Input: `"Dog"` `"God"` => Output: `TRUE`
+* Input: `"Frog"` `"Rock"` => Output: `FALSE`
 
 ---
 
@@ -1051,9 +1051,9 @@ position of each vowel of the inputted string. Counting should start from 1 and 
 
 Output Example:
 
-* Input: `Hello` => Output: `[2, 5]`
-* Input: `World` => Output: `[2]`
-* Input: `Everyday` => Output: `[1, 3, 7]`
+* Input: `"Hello"` => Output: `[2, 5]`
+* Input: `"World"` => Output: `[2]`
+* Input: `"Everyday"` => Output: `[1, 3, 7]`
 
 ---
 
@@ -1063,9 +1063,9 @@ Implement a function that receives a number and returns the sum of each digit of
 
 Output Example:
 
-* Input: `12` => Output: `3` - (1 + 2)
-* Input: `345` => Output: `12` - (3 + 4 + 5) 
-* Input: `123456` => Output: `21` - (1 + 2 + 3 + 4 + 5 + 6) 
+* Input: `12` => Output: `3` (1 + 2)
+* Input: `345` => Output: `12` (3 + 4 + 5) 
+* Input: `123456` => Output: `21` (1 + 2 + 3 + 4 + 5 + 6) 
 
 ---
 
