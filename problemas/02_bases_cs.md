@@ -961,11 +961,25 @@ void MisteryOp(ref char[] a)
 
 ---
 
-58 - Recebeste uma tarefa para implementar uma função que deteta as classes de um jogo MMORPG que irá ser utilizado para o sistema de “Party Search”. Este MMO tem cerca de 6 classes que incluí: Fighter, Cleric, Druid, Barbarian, Rogue e Wizard. No entanto é preciso ter em conta que este jogo permite ao jogador fazer “multi-class”, ou seja, pode criar personagens que tenham até 3 classes distintas num só personagem (e.g. Druid; Figher + Rogue; ou Cleric + Barbarian + Wizard). 
-A tua tarefa é implementar o sistema mais eficiente para detetar a classe (ou classes) do personagem do jogador usando exclusivamente operações de bitwise.
+58 - Recebeste uma tarefa para implementar uma função que deteta as classes de um
+jogo MMORPG que irá ser utilizado para o sistema de “Party Search”. Este MMO tem
+cerca de 6 classes que incluí: Fighter, Cleric, Druid, Barbarian, Rogue e Wizard.
+No entanto é preciso ter em conta que este jogo permite ao jogador fazer “multi-class”,
+ou seja, pode criar personagens que tenham até 3 classes distintas num só personagem
+(e.g. Druid; Figher + Rogue; ou Cleric + Barbarian + Wizard).
 
-You received a task to implement a function capable of detecting classes from an MMORPG hame which will be used for the new "Party Search" Function. This MMO has about 6 classes which includes: Fighter, Cleric, Druid, Barbarian, Rogue and Wizard. However, this game allows players to use a "multi-class" system of up to 3 classes, meaning that players can mix and match of a total of 3 classes (e.g. Druid; Figher + Rogue; ou Cleric + Barbarian + Wizard).
-Your task is to implement an efficient system capable of detecting a class (or classes) of a character using exclusively bitwise operations. 
+A tua tarefa é implementar o sistema mais eficiente para detetar a classe (ou classes)
+do personagem do jogador usando exclusivamente operações bit-a-bit.
+
+You received a task to implement a function capable of detecting classes from an
+MMORPG hame which will be used for the new "Party Search" Function. This MMO has
+about 6 classes which includes: Fighter, Cleric, Druid, Barbarian, Rogue and Wizard.
+However, this game allows players to use a "multi-class" system of up to 3 classes,
+meaning that players can mix and match of a total of 3 classes (e.g. Druid;
+Figher + Rogue; ou Cleric + Barbarian + Wizard).
+
+Your task is to implement an efficient system capable of detecting a class (or classes)
+of a character using exclusively bitwise operations.
 
 ```cs
 const int Fighter = 1;
@@ -975,16 +989,16 @@ const int Barbarian = 8;
 const int Rogue = 16;
 const int Wizard = 32;
 
-public static void CheckClass() // Implement
+public static void CheckClass() { /* Implement */ }
 
-public static int ReturnRandomClass() // Implement
-
+public static int ReturnRandomClass() { /* Implement */ }
 ```
 
 Output Example:
-"-Fighter-"
-"-Clearic--Druid--"
-"-Cleric--Barbarian--Wizard-"
+
+* "-Fighter-"
+* "-Clearic--Druid--"
+* "-Cleric--Barbarian--Wizard-"
 
 ---
 
@@ -1001,7 +1015,7 @@ Input: “Welcome”, 0 => “Welcome”
 
 60 - Um Anagrama consiste em reorganizar as letras de uma palavra para dar origem a outra nova palavra. Implementa uma função que recebe duas strings como input e verifica se uma palavra é anagrama da outra – return true (se é anagrama) ou return false (se não é).
 
-An Anagram consists of a word whose letters can be reorganized into a new word. Implement a function that takes two strings as an input and verifies if a word is an anagram of another - return true if it is, return false if it is not. 
+An Anagram consists of a word whose letters can be reorganized into a new word. Implement a function that takes two strings as an input and verifies if a word is an anagram of another - return true if it is, return false if it is not.
 
 
 Output Example:
@@ -1011,7 +1025,7 @@ Input: “Frog” “Rock” => FALSE
 
 ---
 
-61 - Implementa uma função que deteta as vogais de uma string e que retorna um array de inteiros cujo contenha a posição de cada vogal dessa palavra. A contagem deve começar do 1 e não do 0. 
+61 - Implementa uma função que deteta as vogais de uma string e que retorna um array de inteiros cujo contenha a posição de cada vogal dessa palavra. A contagem deve começar do 1 e não do 0.
 
 Implement a function that detects the vowels of a string and returns an integer array containing the position of each vowel of the inputted string. Counting should start from 1 and not 0.
 
