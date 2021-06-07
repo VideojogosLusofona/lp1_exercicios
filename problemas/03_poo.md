@@ -1923,4 +1923,4 @@ importante considerar que nestes métodos o mundo é
 [`Toroidal`](https://en.wikipedia.org/wiki/Toroid) - ou seja "dá a volta" ao início 
 quando chegamos as extremidades (ver figura em baixo).
 
-![`Toroidal World`](../img/Torus_from_rectangle.gif.mp4)
+![`Toroidal World`](../img/Torus-from-rectanglegif.gif)
