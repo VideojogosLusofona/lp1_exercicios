@@ -1919,7 +1919,7 @@ bi-dimensional de inteiros que consiste na soma de todos os numeros das celulas
 vizinhas incluíndo a própria célula. Para este exercício iremos usar o método 
 de vizinhança de [`Von Neumann`](https://en.wikipedia.org/wiki/Von_Neumann_neighborhood) 
 e do método de vizinhança de [`Moore`](https://en.wikipedia.org/wiki/Moore_neighborhood). 
-É importante considerar que nestes métodos o mundo é [`Toroidal`](https://en.wikipedia.org/wiki/Toroid) 
-- ou seja "dá a volta" ao início quando chegamos as extremidades (ver figura em baixo).
+É importante considerar que nestes métodos o mundo é [`Toroidal`](https://en.wikipedia.org/wiki/Toroid), 
+ou seja "dá a volta" ao início quando chegamos as extremidades (ver figura em baixo).
 
 ![`Toroidal World`](../img/Torus-from-rectanglegif.gif)
