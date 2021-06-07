@@ -1912,3 +1912,15 @@ correto funcionamento. Faz sentido este método ser `static`? Porquê?
 > [Soluções](../solucoes/03_poo/86.md)
 
 ---
+
+87 - Escreve um programa que recebe uma matriz bi-dimensional de inteiros (input)
+e que retorna uma nova matriz bi-dimensional que consiste na soma de todos os 
+numeros das celulas vizinhas incluíndo a própria célula. Para este exercício 
+iremos usar o método de vizinhança de 
+[`Von Neumann`](https://en.wikipedia.org/wiki/Von_Neumann_neighborhood) e do método 
+de vizinhança de [`Moore`](https://en.wikipedia.org/wiki/Moore_neighborhood). É 
+importante considerar que nestes métodos o mundo é 
+[`Toroidal`](https://en.wikipedia.org/wiki/Toroid) - ou seja "dá a volta" ao início 
+quando chegamos as extremidades (ver figura em baixo).
+
+![`Toroidal World`](../img/Torus_from_rectangle.gif.mp4)
