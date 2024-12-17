@@ -15,7 +15,7 @@ work. If not, see <http://creativecommons.org/licenses/by-nc-sa/4.0/>.
 
 Este repositório contém uma série de exercícios da disciplina de Linguagens de
 Programação I da [Licenciatura em Videojogos][lv] da
-[Universidade Lusófona de Humanidades e Tecnologias][ULHT] em Lisboa.
+[Universidade Lusófona - Centro Universitário de Lisboa][ULHT].
 
 Os alunos podem e devem fazer _fork_ deste repositório, clonar o mesmo para o
 seu PC e propor resoluções para os exercícios (e mesmo novos exercícios)
@@ -132,13 +132,14 @@ O código associado aos exercícios é disponibilizado através da licença [GPL
 
 ## Metadados
 
-* Autor: [Nuno Fachada]
+* Autor: [Nuno Fachada], [Phil Lopes]
 * [Colaboradores](https://github.com/VideojogosLusofona/lp1_exercicios/graphs/contributors)
 * Curso: [Licenciatura em Videojogos][lv]
-* Instituição: [Universidade Lusófona de Humanidades e Tecnologias][ULHT]
+* Instituição: [Universidade Lusófona - Centro Universitário de Lisboa][ULHT]
 
 [GPLv3]:https://www.gnu.org/licenses/gpl-3.0.en.html
 [CC BY-NC-SA 4.0]:https://creativecommons.org/licenses/by-nc-sa/4.0/
-[lv]:https://www.ulusofona.pt/licenciatura/videojogos
-[Nuno Fachada]:https://github.com/fakenmc
+[lv]:https://www.ulusofona.pt/lisboa/licenciatura/videojogos
+[Nuno Fachada]:https://github.com/nunofachada
+[Phil Lopes]:https://github.com/WorshipCookies
 [ULHT]:https://www.ulusofona.pt/
