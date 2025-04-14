@@ -1210,3 +1210,38 @@ Implementa este comportamento modificando **apenas** os três métodos da classe
 
 ---
 
+69 - Cria um projeto chamado **WorkerTable** que apresenta uma tabela com o
+número de empregado, nome do empregado e a sua função na empresa. Exemplo de
+execução:
+
+```
+$ dotnet run --project WorkerTable -- 3
+┌────┬───────────────┬─────────────────────────────────┐
+│ ID │ Name          │ Job                             │
+├────┼───────────────┼─────────────────────────────────┤
+│ 1  │ Fábio Nobre   │ Human Implementation Planner    │
+│ 2  │ Clara Coelho  │ Chief Tactics Coordinator       │
+│ 3  │ Juliana Ramos │ International Program Executive │
+└────┴───────────────┴─────────────────────────────────┘
+```
+
+Detalhes para implementação:
+
+- A tabela deve ser criada com a biblioteca **[Spectre.Console]**.
+- Os nomes e funções dos empregados devem ser criados com a biblioteca **[Bogus]**.
+- O argumento obrigatório na linha de comandos indica o número de empregados.
+- Este valor deve também ser usado também como *seed* da biblioteca **[Bogus]** na
+  1ª linha do `Main()`:
+  ```cs
+  Randomizer.Seed = new Random(int.Parse(args[0])); // Definir seed
+  Faker faker = new Faker("pt_PT"); // Usar o objeto faker para gerar dados
+  ```
+-  Evita o uso de `var`.
+
+> [Soluções](../solucoes/02_bases_cs/69.md)
+
+---
+
+
+[Spectre.Console]:https://spectreconsole.net/
+[Bogus]:https://github.com/bchavez/Bogus
