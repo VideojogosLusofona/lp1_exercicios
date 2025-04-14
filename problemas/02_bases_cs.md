@@ -1130,13 +1130,15 @@ You found the hidden number 16 after 4 tries.
 
 ---
 
-67. Descarrega o código disponível [aqui](02_bases_cs/067/), que contém:
-    - Uma classe `Program` com o método `Main()` (já criado) e com mais três
-      métodos para completares.
-    - A enum (com *flags*) `PlayerGear` com membros `None`, `Helmet`,
-      `Shield` e `Boots`.
-    - A enum `TrapType` com membros `FallingRocks`, `SpinningBlades`,
-      `PoisonGas` e `LavaPit`.
+67 - Cria um projeto chamado **TrapAnalyzer** e adiciona-lhe o código disponível
+[aqui](02_bases_cs/067/). Este código contém:
+
+- Uma classe `Program` com o método `Main()` (já criado) e com mais três
+  métodos para completares.
+- A enum (com *flags*) `PlayerGear` com membros `None`, `Helmet`, `Shield` e
+  `Boots`.
+- A enum `TrapType` com membros `FallingRocks`, `SpinningBlades`, `PoisonGas` e
+  `LavaPit`.
 
 Este programa analisa se o jogador sobrevive a armadilha com os seus itens de
 acordo com as seguintes regras (todos os items indicados são necessários para o
@@ -1169,12 +1171,14 @@ Implementa este comportamento modificando **apenas** os três métodos da classe
 
 ---
 
-68. Descarrega o código disponível [aqui](02_bases_cs/068/), que contém:
-    - Uma classe `Program` com o método `Main()` (já criado) e com mais três
-      métodos para completares.
-    - A enum (com *flags*) `Weapons` com membros `None`, `SilverBullet`,
-      `Garlic` e `HolyWater`.
-    - A enum `EnemyType` com membros `Zombie`, `Vampire`, `Werewolf` e `Ghost`.
+68 - Cria um projeto chamado **WeaponSelector** e adiciona-lhe o código
+disponível [aqui](02_bases_cs/068/). Este código contém:
+
+- Uma classe `Program` com o método `Main()` (já criado) e com mais três
+  métodos para completares.
+- A enum (com *flags*) `Weapons` com membros `None`, `SilverBullet`,
+  `Garlic` e `HolyWater`.
+- A enum `EnemyType` com membros `Zombie`, `Vampire`, `Werewolf` e `Ghost`.
 
 Este programa analisa se o inimigo pode ser morto com alguma das armas de acordo
 com as seguintes regras:
