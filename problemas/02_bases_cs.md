@@ -1130,3 +1130,43 @@ You found the hidden number 16 after 4 tries.
 
 ---
 
+67. Descarrega o código disponível [aqui](02_bases_cs/067/), que contém:
+    - Uma classe `Program` com o método `Main()` (já criado) e com mais três
+      métodos para completares:
+    - Enum (com *flags*) `PlayerGear` com membros `None`, `Helmet`,
+      `Shield` e `Boots`.
+    - Enum `TrapType` com membros `FallingRocks`, `SpinningBlades`,
+      `PoisonGas` e `LavaPit`
+
+Este programa analisa se o jogador sobrevive a armadilha com os seus itens de
+acordo com as seguintes regras (todos os items indicados são necessários para o
+jogador sobreviver):
+
+| **Trap**         | **Helmet** | **Shield** | **Boots** |
+|------------------|------------|------------|-----------|
+| `FallingRocks`     | ✅         | --         | --        |
+| `SpinningBlades`   | --         | ✅         | --        |
+| `PoisonGas`        | ✅         | ✅         | --        |
+| `LavaPit`          | --         | --         | ✅        |
+
+
+Alguns exemplos de execução:
+
+```
+$ dotnet run --project TrapAnalyzer -- PoisonGas Helmet Shield
+Player survives PoisonGas
+$ dotnet run --project TrapAnalyzer -- LavaPit Helmet
+Player dies due to LavaPit
+$ dotnet run --project TrapAnalyzer -- FallingRocks
+Player dies due to FallingRocks
+$ dotnet run --project TrapAnalyzer -- SpinningBlades Boots Helmet
+Player dies due to SpinningBlades
+```
+
+Implementa este comportamento modificando **apenas** os três métodos da classe
+`Program`, não modificando nada mais, nem sequer o método `Main()`.
+
+> [Soluções](../solucoes/02_bases_cs/67.md)
+
+---
+
