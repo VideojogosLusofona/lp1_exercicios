@@ -1096,3 +1096,37 @@ Step number: 2
 > [Soluções](../solucoes/02_bases_cs/65.md)
 
 ---
+
+66 - Cria programa que:
+
+1. Gera um número aleatório entre $0$ e $30$ com o seguinte código:
+   ```cs
+   Random rnd = new Random();
+   int numberToGuess = rnd.Next(31);
+   ```
+2. Pede ao jogador um número inteiro entre $0$ e $30$.
+3. Se o número inserido pelo jogador for menor que $0$ ou maior que $30$, o
+   programa deve informar o jogador desse facto e voltar ao ponto 2.
+4. Se o número inserido pelo jogador for menor ou maior que o número aleatório,
+   o programa deve informar o jogador desse facto e voltar ao ponto 2.
+5. Se o número inserido pelo jogador for igual ao número aleatório, o programa
+   deve apresentar o nº de vezes que demorou a acertar e terminar a execução.
+
+Exemplo de execução:
+
+```
+$ dotnet run --project GuessTheNumber
+Insert number: 23
+The hidden number is lower than 23. Try again.
+Insert number: -26
+Numbers must be between 0 and 30. Try again.
+Insert number: 10
+The hidden number is higher than 10. Try again.
+Insert number: 16
+You found the hidden number 16 after 4 tries.
+```
+
+> [Soluções](../solucoes/02_bases_cs/66.md)
+
+---
+
