@@ -968,6 +968,8 @@ essa `string` o número de vezes indicado. Exemplos:
 * Input: `"Jar"`, `1` => Output: `"Jar"`
 * Input: `"Welcome"`, `0` => `""`
 
+> [Soluções](../solucoes/02_bases_cs/58.md)
+
 ---
 
 59 - Um anagrama consiste em reorganizar as letras de uma palavra para dar
@@ -977,6 +979,8 @@ como input e verifica se uma palavra é anagrama da outra. Exemplos:
 * Input: `"Taste"` `"State"` => Output: `true`
 * Input: `"Dog"` `"God"` => Output: `true`
 * Input: `"Frog"` `"Rock"` => Output: `false`
+
+> [Soluções](../solucoes/02_bases_cs/59.md)
 
 ---
 
@@ -988,6 +992,8 @@ Exemplos:
 * Input: `"World"` => Output: `[1]`
 * Input: `"Everyday"` => Output: `[0, 2, 6]`
 
+> [Soluções](../solucoes/02_bases_cs/60.md)
+
 ---
 
 61 - Implementa um método que recebe um número e devolve a soma de cada dígito
@@ -996,6 +1002,8 @@ desse número. Exemplos:
 * Input: `12` => Output: `3` (1 + 2)
 * Input: `345` => Output: `12` (3 + 4 + 5)
 * Input: `123456` => Output: `21` (1 + 2 + 3 + 4 + 5 + 6)
+
+> [Soluções](../solucoes/02_bases_cs/61.md)
 
 ---
 
@@ -1007,6 +1015,8 @@ Exemplos:
 * Input: `["abc", "aaa", "ccc"]`, `2`, `"bbb"` => Output: `["abc", "aaa", "bbb", "ccc"]`
 * Input: `["0001", "0010", "0011"]`, `0` `"0000"` => Ouput: `["0000", "0001", "0010", "0011"]`
 
+> [Soluções](../solucoes/02_bases_cs/62.md)
+
 ---
 
 63 - Implementa um método recebe uma `string` e faça a inversão de cada palavra
@@ -1015,5 +1025,36 @@ dessa `string`.
 * Input: `"Hello World!"` => Output: `"olleH !dlroW"`
 * Input: `"Foo Bar"` => Output: `"ooF raB"`
 * Input: `"Cool Beans"` => Output: `"looC snaeB"`
+
+> [Soluções](../solucoes/02_bases_cs/63.md)
+
+---
+
+64 - Cria um programa que peça ao utilizador um número inteiro em formato
+hexadecimal e que imprime o caráter Unicode (UTF) correspondente no ecrã. Os
+códigos Unicode estão disponíveis em <https://symbl.cc/>. Alguns exemplos:
+
+```
+$ dotnet run --project Smiley
+Insere código   : 1F39C
+Caráter Unicode : 🎜
+$ dotnet run --project Smiley
+Insere código   : 263A
+Caráter Unicode : ☺
+$ dotnet run --project Smiley
+Insere código   : 1F552
+Caráter Unicode : 🕒
+```
+
+Dicas / Sugestões:
+
+- Podes vir a precisar do módulo `System.Globalization`.
+- Para converteres `string` contendo inteiro em formato hexadecimal para `int`,
+  pesquisa na API do C# a documentação de `Int32.Parse(String, NumberStyles)` e
+  de `NumberStyles`.
+- Para obteres caráter Unicode (UTF) a partir de inteiro, pesquisa a
+  documentação `char` (mais concretamente, de `System.Char`).
+
+> [Soluções](../solucoes/02_bases_cs/64.md)
 
 ---
