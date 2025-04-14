@@ -1242,6 +1242,43 @@ Detalhes para implementação:
 
 ---
 
+70 - Cria um projeto chamado **CarStats** que apresenta um gráfico de barras com indicação do número de carros vendidos por marca a semana passada. Exemplo de
+execução:
+
+```cs
+$ dotnet run --project CarStats -- 3
+                                Car sales
+    Ferrari  ████████████████████████████████████████████ 14
+      Smart  ███████████ 4
+Lamborghini  ███████████ 4
+```
+
+Detalhes para implementação:
+
+- O gráfico de barras deve ser criado com a biblioteca **[Spectre.Console]**.
+  Dicas:
+  - Criem um objeto do tipo `BarChart` da seguinte forma:
+    ```cs
+    BarChart bc = new BarChart();
+    ```
+  - Depois invoquem os seus métodos um de cada vez, por exemplo:
+    ```cs
+    bc.AddItem("Dacia", 12);
+- As marcas e número de carros (entre 1 e 20, inclusive) devem ser gerados com a
+  biblioteca **[Bogus]**.
+- O argumento obrigatório na linha de comandos indica o número de marcas.
+- Este valor deve também ser usado também como *seed* da biblioteca **[Bogus]**
+  na 1ª linha do `Main()`:
+  ```cs
+  Randomizer.Seed = new Random(int.Parse(args[0])); // Definir seed
+  Faker faker = new Faker(); // Usar o objeto faker para gerar dados
+  ```
+- Evita o uso de `var`.
+
+> [Soluções](../solucoes/02_bases_cs/70.md)
+
+---
+
 
 [Spectre.Console]:https://spectreconsole.net/
 [Bogus]:https://github.com/bchavez/Bogus
