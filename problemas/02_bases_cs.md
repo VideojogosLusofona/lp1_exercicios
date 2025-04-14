@@ -1058,3 +1058,41 @@ Dicas / Sugestões:
 > [Soluções](../solucoes/02_bases_cs/64.md)
 
 ---
+
+65 - Cria programa que:
+
+1. Pede ao utilizador um número de **início** (inteiro e maior que $1$) e guarda
+   esse valor na variável `start`.
+2. Pede ao utilizador um número de **passo** -- inteiro no intervalo $[1,$
+   `start`$[$ --
+   e guarda esse valor na variável `step`.
+3. Se algum dos valores não estiver no intervalo pretendido, informar o
+   utilizador e voltar a 1.
+4. Se `step` $\geq$ `start`, informar o utilizador e voltar a 1.
+5. Se `start` não for divisível por `step`, informar o utilizador e voltar a 1.
+6. Caso contrário, imprime a contagem decrescente, de `start` até 0, `step` a
+   `step`, e termina o programa.
+
+Exemplo de execução:
+
+```
+$ dotnet run --project PerfectCountdown
+Start number: -23
+Step number: 26
+Out-of-range start or step. Try again.
+Start number: 24
+Step number: 24
+Start must be higher than step. Try again.
+Start number: 30
+Step number: 13
+Start not divisible by step. Try again.
+Start number: 4
+Step number: 2
+4
+2
+0
+```
+
+> [Soluções](../solucoes/02_bases_cs/65.md)
+
+---
