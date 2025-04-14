@@ -961,135 +961,56 @@ void MisteryOp(ref char[] a)
 
 ---
 
-58 - Recebeste uma tarefa para implementar uma função que deteta as classes de um
-jogo MMORPG que irá ser utilizado para o sistema de “Party Search”. Este MMO tem
-cerca de 6 classes que incluí: Fighter, Cleric, Druid, Barbarian, Rogue e Wizard.
-No entanto é preciso ter em conta que este jogo permite ao jogador fazer “multi-class”,
-ou seja, pode criar personagens que tenham até 3 classes distintas num só personagem
-(e.g. Druid; Figher + Rogue; ou Cleric + Barbarian + Wizard).
-
-A tua tarefa é implementar o sistema mais eficiente para detetar a classe (ou classes)
-do personagem do jogador usando exclusivamente operações bit-a-bit - **CheckClass()
-Para testar o vosso método implementa uma função **ReturnRandomClass** que retorna 
-uma a tres classes (podes também pensar como implementar este método com bitwise).
-
-You received a task to implement a function capable of detecting classes from an
-MMORPG hame which will be used for the new "Party Search" Function. This MMO has
-about 6 classes which includes: Fighter, Cleric, Druid, Barbarian, Rogue and Wizard.
-However, this game allows players to use a "multi-class" system of up to 3 classes,
-meaning that players can mix and match of a total of 3 classes (e.g. Druid;
-Figher + Rogue; ou Cleric + Barbarian + Wizard).
-
-Your task is to implement an efficient system capable of detecting a class (or classes)
-of a character using exclusively bitwise operations - **CheckClass**.
-
-```cs
-const int Fighter = 1;
-const int Cleric = 2;
-const int Druid = 4;
-const int Barbarian = 8;
-const int Rogue = 16;
-const int Wizard = 32;
-
-public static void CheckClass() { /* Implement */ }
-
-public static int ReturnRandomClass() { /* Implement */ }
-```
-
-Output Example:
-
-* "-Fighter-"
-* "-Clearic--Druid--"
-* "-Cleric--Barbarian--Wizard-"
-
----
-
-59 - Utilizando o código implementado no exercício 58, faz refactor ao código para 
-que este utilize enumeration flags em vez de constantes para referenciar as classes 
-do jogo.
-
-Using your implemented code from exercise 58, refactor it so that it uses enumeration 
-flags instead of constantes to refer to the different classes of the game. 
-
----
-
-60 - Implementa uma função que recebe como input uma String e um número, e que repete 
-essa String o número de vezes inserido.
-
-Implement a function that receives as input a String and a Number. This function should 
-return the same String repeated by the inputted number.
-
-Output Example:
+58 - Implementa um método que recebe uma `string` e um número, e que devolve
+essa `string` o número de vezes indicado. Exemplos:
 
 * Input: `"Banana"`, `3` => Output: `"BananaBananaBanana"`
-* Input: `"Jar"`, `1` => Output: `"JarJar"`
-* Input: `"Welcome"`, `0` => `"Welcome"`
+* Input: `"Jar"`, `1` => Output: `"Jar"`
+* Input: `"Welcome"`, `0` => `""`
 
 ---
 
-61 - Um Anagrama consiste em reorganizar as letras de uma palavra para dar origem a outra nova palavra. 
-Implementa uma função que recebe duas strings como input e verifica se uma palavra é anagrama da outra.
+59 - Um anagrama consiste em reorganizar as letras de uma palavra para dar
+origem a outra nova palavra. Implementa um método que recebe duas `strings`
+como input e verifica se uma palavra é anagrama da outra. Exemplos:
 
-An Anagram consists of a word whose letters can be reorganized into a new word. Implement a function that 
-takes two strings as an input and verifies if a word is an anagram of another.
-
-
-Output Example:
-
-* Input: `"Taste"` `"State"` => Output: `TRUE`
-* Input: `"Dog"` `"God"` => Output: `TRUE`
-* Input: `"Frog"` `"Rock"` => Output: `FALSE`
+* Input: `"Taste"` `"State"` => Output: `true`
+* Input: `"Dog"` `"God"` => Output: `true`
+* Input: `"Frog"` `"Rock"` => Output: `false`
 
 ---
 
-62 - Implementa uma função que deteta as vogais de uma string e que retorna um array de inteiros cujo 
-contenha a posição de cada vogal dessa palavra. A contagem deve começar do 1 e não do 0.
+60 - Implementa um método que deteta as vogais de uma `string` e que devolve um
+_array_ de inteiros que contenha a posição de cada vogal dessa palavra.
+Exemplos:
 
-Implement a function that detects the vowels of a string and returns an integer array containing the 
-position of each vowel of the inputted string. Counting should start from 1 and not 0.
-
-
-Output Example:
-
-* Input: `"Hello"` => Output: `[2, 5]`
-* Input: `"World"` => Output: `[2]`
-* Input: `"Everyday"` => Output: `[1, 3, 7]`
+* Input: `"Hello"` => Output: `[1, 4]`
+* Input: `"World"` => Output: `[1]`
+* Input: `"Everyday"` => Output: `[0, 2, 6]`
 
 ---
 
-63 - Implementa uma função que recebe um número e retorna a soma de cada dígito desse número.
-
-Implement a function that receives a number and returns the sum of each digit of that number.
-
-Output Example:
+61 - Implementa um método que recebe um número e devolve a soma de cada dígito
+desse número. Exemplos:
 
 * Input: `12` => Output: `3` (1 + 2)
-* Input: `345` => Output: `12` (3 + 4 + 5) 
-* Input: `123456` => Output: `21` (1 + 2 + 3 + 4 + 5 + 6) 
+* Input: `345` => Output: `12` (3 + 4 + 5)
+* Input: `123456` => Output: `21` (1 + 2 + 3 + 4 + 5 + 6)
 
 ---
 
-64 - Implementa uma função que recebe como input um array de strings, um inteiro e uma string. 
-A função deverá retornar um array com a nova string inserido na posição do inteiro. 
-Nota: Implemente esta função de raíz.
-
-Implement a function that takes as input an array of strings, an integer and a string. 
-The function should return an array with the new string inserted in the position of the integer. 
-Note: Implement this function from scratch.
-
-
-Output Example:
+62 - Implementa um método recebe um _array_ de `strings`, um inteiro e uma
+`string`, e que devolve um _array_ com a nova `string` inserida na posição do
+inteiro. Usa apenas _arrays_, evitando listas ou outro tipo de coleções.
+Exemplos:
 
 * Input: `["abc", "aaa", "ccc"]`, `2`, `"bbb"` => Output: `["abc", "aaa", "bbb", "ccc"]`
 * Input: `["0001", "0010", "0011"]`, `0` `"0000"` => Ouput: `["0000", "0001", "0010", "0011"]`
 
 ---
 
-65 - Implementa uma função que receba uma string e faça a sua inversão para cada palavra dessa string
-
-Implement a function that receives a string and inverts every word of that string.
-
-Output Example:
+63 - Implementa um método recebe uma `string` e faça a inversão de cada palavra
+dessa `string`.
 
 * Input: `"Hello World!"` => Output: `"olleH !dlroW"`
 * Input: `"Foo Bar"` => Output: `"ooF raB"`
